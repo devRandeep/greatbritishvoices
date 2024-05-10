@@ -31,36 +31,35 @@ export default function Wesupply() {
 
     const SupplyCard = [
         {
+            iconUrl: "https://greatbritishvoices.co.uk/static/css/img/arrow.png",
+            cardTitle: "Female Voices",
+            cardUrl: "https://greatbritishvoices.co.uk/voice/female-voiceover-artists/?gender=Female",
+        },
+        {
             iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
             cardTitle: "Celebrity Voice Overs",
             cardUrl: "https://greatbritishvoices.co.uk/celebrity-voice-overs/",
         },
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
-            cardTitle: "News Broadcasters",
-            cardUrl: "https://greatbritishpresenters.co.uk/voice/international-voice-overs/",
+            iconUrl: "https://greatbritishvoices.co.uk/static/css/img/mic.png",
+            cardTitle: "Male Voices",
+            cardUrl: "https://greatbritishvoices.co.uk/voice/male-voice-overs/",
         },
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl: "https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
-            cardTitle: "Conference Facilitators",
-            cardUrl: "https://greatbritishpresenters.co.uk/presenters/conference-facilitators/",
+            iconUrl: "https://greatbritishvoices.co.uk/static/css/img/spoon-plate.png",
+            cardTitle: "Home Studios",
+            cardUrl: "https://greatbritishvoices.co.uk/voice/home-studios/",
         },
         {
             iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
-            cardTitle: "Sports Speakers",
-            cardUrl: "https://greatbritishspeakers.co.uk/speaker/sports-speakers/",
-        },
-
+            cardTitle: "Kids Voices",
+            cardUrl: "https://greatbritishvoices.co.uk/voice/kids-voices/",
+        },       
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/spoon-plate.png",
-            cardTitle: "After-Dinner Speakers",
-            cardUrl: "https://greatbritishspeakers.co.uk/speaker/after-dinner-speakers/",
-        },
+            iconUrl: "	https://greatbritishvoices.co.uk/static/css/img/arrow.png",
+            cardTitle: "UK Voices",
+            cardUrl: "https://greatbritishvoices.co.uk/talent-search/?language=English_%28British%29&accent=GBV_British%2FRegional_Accents/",
+        },      
         // Other SupplyCard items...
 
     ];

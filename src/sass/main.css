@@ -38,6 +38,22 @@ p {
   font-size: 18px;
 }
 
+button {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  background: #ed174b;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  border: none;
+  padding: 8px 22px;
+  border-radius: 8px;
+}
+button span {
+  padding-right: 10px;
+}
+
 .submit-error {
   color: #ed174b;
   font-size: 14px;
@@ -107,18 +123,96 @@ header {
 
 header li {
   font-weight: 800;
+  position: relative;
 }
 header li span {
   padding-right: 10px;
+}
+header li:hover ul {
+  visibility: visible;
 }
 header li a {
   color: #fff;
   font-size: 18px;
   font-weight: 800;
 }
+header li ul {
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  z-index: 444;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 10px;
+  left: -100%;
+  visibility: hidden;
+  height: fit-contents;
+}
+header li ul li a {
+  border: none !important;
+  color: #2b2a35 !important;
+  font-size: 15px !important;
+  justify-content: center;
+  padding: 14px 10px !important;
+}
+header li ul input {
+  width: 10vw;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 0px 10px;
+  outline: none;
+}
 
 .rightHeader {
   text-align: right;
+}
+
+main.hero {
+  position: relative;
+  width: 100%;
+}
+
+.voicesearchForm {
+  padding: 20px;
+  background: none;
+  position: absolute;
+  width: 100%;
+  bottom: 3vw;
+  z-index: 222;
+}
+.voicesearchForm form {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 11px;
+}
+.voicesearchForm div {
+  width: 100%;
+}
+.voicesearchForm div select {
+  -webkit-appearance: auto;
+     -moz-appearance: auto;
+          appearance: auto;
+  height: 38px;
+  line-height: 38px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 15px;
+}
+.voicesearchForm div input {
+  width: 100%;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 0px 10px;
+  outline: none;
+}
+.voicesearchForm div button {
+  width: 100%;
 }
 
 .section_first {

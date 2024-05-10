@@ -28,7 +28,7 @@ function Home() {
 
 			{/* ===================== BRAND LOGO */}
 
-			<Brand />
+			{/* <Brand /> */}
 
 			{/* ====================== We Supply */}
 
