@@ -65,6 +65,36 @@ export default function Footer() {
             </div>
           </Col>
         </Row>
+        <Row className="bottomFooter">
+          <Col md={6}>
+            <h3>Voices</h3>
+            <div className="voicesList">
+              <Link to="" exact >Character Actors</Link>
+              <Link to="" exact >Educational &amp; Explainer</Link>
+              <Link to="" exact >Female Voiceovers</Link>
+              <Link to="" exact >Home Studios</Link>
+              <Link to="" exact >International Voiceovers</Link>
+              <Link to="" exact >Kids &amp; Teen Voices</Link>
+              <Link to="" exact >Male Voiceovers</Link>
+              <Link to="" exact >Medical Explainers</Link>
+              <Link to="" exact >Sports Commentators</Link>
+              <Link to="" exact >TV &amp; Radio Broadcasters</Link>
+              <Link to="" exact >Voice Of God</Link>
+            </div>
+          </Col>
+          <Col md={6}>
+            <h3>Useful Links</h3>
+
+            <div className="usefullLinks">
+              <Link to="" exact>Voice Search</Link>
+              <Link to="" exact>My Shortlist</Link>
+              <Link to="" exact>New Blogs</Link>
+              <Link to="" exact>Events For Awarness Days</Link>
+              <Link to="" exact>Speaker Podcast</Link>
+              <Link to="" exact>Contact Us</Link>             
+            </div>
+          </Col>
+        </Row>
       </footer>
     </>
   );

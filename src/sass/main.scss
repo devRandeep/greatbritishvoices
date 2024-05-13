@@ -472,6 +472,34 @@ footer {
     }
 }
 
+.bottomFooter {
+    h3 {
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    .voicesList {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        a {
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+    }
+    .usefullLinks {
+        h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        display: grid;
+        a {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+}
+
 .we_supply {
     padding: 4.8rem 40px;
     padding-bottom: 40px;

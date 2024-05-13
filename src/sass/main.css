@@ -441,6 +441,32 @@ footer .footer_right .term_and_condition li {
   font-size: 1.02vw;
 }
 
+.bottomFooter h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.bottomFooter .voicesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.bottomFooter .voicesList a {
+  font-size: 14px;
+  margin-bottom: 9px;
+}
+.bottomFooter .usefullLinks {
+  display: grid;
+}
+.bottomFooter .usefullLinks h3 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.bottomFooter .usefullLinks a {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .we_supply {
   padding: 4.8rem 40px;
   padding-bottom: 40px;

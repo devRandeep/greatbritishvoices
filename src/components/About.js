@@ -24,7 +24,7 @@ export default function About() {
     }, []);
 
     if (!items || !Object.keys(items).length) {
-        return <div className='please_wait'> <div class="loader" > </div><span>Data Loading....</span > </div>;
+        return <div className='please_wait'> <div className="loader" > </div><span>Data Loading....</span > </div>;
     }
     return (
         <>
