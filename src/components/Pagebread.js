@@ -27,7 +27,7 @@ export default function Pagebread() {
                     </Col>
                     <Col md={5} className='p-0 d-sm-done d-md-block d-none'>
                         <div className="text_panel_breadcrumbs_image">
-                            <img src={items.right_image} alt="" />
+                            <img src="https://greatbritishvoices.co.uk/wp-content/uploads/2020/09/Contact-Page-GBV-2.jpg" alt="" />
                         </div>
                     </Col>
                 </Row>

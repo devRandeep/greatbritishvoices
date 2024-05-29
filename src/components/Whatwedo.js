@@ -5,10 +5,10 @@ export default function Whatwedo() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	
 	useEffect(() => {
-		fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/2/?acf_format=standard")
+		fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
 			.then((res) => res.json())
 			.then((json) => {
-				setItems(json.acf);
+				setItems(json.acf_fields);
 				setIsLoaded(true);
 			});
 	}, []);
