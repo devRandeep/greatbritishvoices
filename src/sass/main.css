@@ -16,9 +16,6 @@ html a {
   color: #fff;
   transition: all 0.3s ease-in-out;
 }
-html a:hover {
-  background: #960429 !important;
-}
 
 img {
   max-width: 100%;
