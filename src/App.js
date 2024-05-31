@@ -22,6 +22,7 @@ import Shortlist from './components/Shortlist';
 import Blog from './components/Blog';
 import Result from './components/Result';
 import VoiceCards from './components/VoiceCards';
+import BlogList from './components/BlogList';
 
 
 
@@ -46,6 +47,7 @@ function App() {
         <Route exact path="/tc" component={Terms} />      
         <Route exact path="/results" component={Result} />
         <Route exact path="/voicecards" component={VoiceCards} />
+        <Route exact path="/bloglist" component={BlogList} />
         <Route component={Error} />
       </Switch>
 

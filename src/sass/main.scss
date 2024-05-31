@@ -988,6 +988,8 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 .articleBox {
     box-shadow: 0 0 20px #00000026;
     margin-bottom: 20px;
+    height: 100%;
+    margin-bottom: 20px;
     .articleImage {
         img {
             width: 100%;
@@ -1008,6 +1010,49 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             text-align: left;
             display: block;
         }
+    }
+}
+
+.inputGroup {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    i {
+        position: absolute;
+        z-index: 333;
+        left: 26px;
+        top: 12px;
+        font-size: 19px;
+        color: #d3d2d2;
+    }
+    input {
+        width: 100%;
+        padding: 10px 45px;
+        outline: none;
+        border-radius: 5px;
+        border: 1px solid #dddd;
+        position: relative;
+        &:before {
+            content: '/sdf';
+            position: absolute;
+            left: 0px;
+            z-index: 333;
+            top: 0;
+        }
+    }
+}
+
+.pagination {
+    justify-content: center;
+    .page-link {
+        // background-color: #9b9b9b;
+        border-color: #dadada;
+        color: #1c1a1a;
+        padding: 10px 20px;
+    }
+    .active>.page-link {
+        background: #ed174b;
+        color: #fff !important;
     }
 }
 

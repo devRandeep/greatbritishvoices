@@ -26,7 +26,7 @@ export default function Blog() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
   }
 
   if (error) {
@@ -39,7 +39,7 @@ export default function Blog() {
       <div className="heading_panel">
 						<h3>News Article</h3>
 						<div className="slider_control">
-							<Link to="/voicecards" className="button">View More</Link>
+							<Link to="/bloglist" className="button">View More</Link>
 						</div>
 					</div>
       </Row>
