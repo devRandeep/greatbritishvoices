@@ -28,7 +28,7 @@ export default function VoiceCards() {
                     <Col md={3} key={index}>
                         <div className='voiceBox'>
                             <div className="profileImage">
-                                <Link>
+                                <Link to={post.link}>
                                     <img src="" alt="" />
                                 </Link>
                             </div>
@@ -37,7 +37,7 @@ export default function VoiceCards() {
                                     <span className=''>{post.title}</span>
                                 </Link>                            
                                 <ul>
-                                  <li dangerouslySetInnerHTML={{ __html: post.acf_fields.key_information}}></li>
+                                  <li dangerouslySetInnerHTML={{ __html: post.acf_fields.key_information}}></li>    
                                 </ul>
                             </div>
                         </div>

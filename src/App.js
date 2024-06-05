@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/main.css";
+import "./js/main";
 import "./sass/responsive.css";
 import Head from "./components/Head";
 import Home from "./components/Home";
