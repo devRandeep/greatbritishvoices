@@ -14,7 +14,7 @@ export default function Blog() {
           throw new Error('Network response was not ok');
         }
         return response.json();
-      })
+      }) 
       .then(data => {
         setData(data);
         setLoading(false);
@@ -53,7 +53,7 @@ export default function Blog() {
             <div className="articleDesc">
               <span>{item.post_date}</span>
               <h5>{item.post_title}</h5>
-              <a href="" className='button'>Read More</a>
+              <a href="" className='button'>Read More</a> 
             </div>
           </div>
         </Col>

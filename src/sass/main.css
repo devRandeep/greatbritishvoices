@@ -504,6 +504,74 @@ footer .footer_right .term_and_condition li {
   align-items: center;
 }
 
+.ourProcess {
+  background: #1c1c1c;
+}
+.ourProcess .heading_panel {
+  display: inline;
+  color: #fff;
+}
+
+.processBox {
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 50%;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+}
+.processBox b {
+  position: absolute;
+  left: 10px;
+  background: #fff;
+  color: #2870ac;
+  padding: 10px;
+  border-radius: 50%;
+  top: 10px;
+  z-index: 2;
+  font-size: 16px;
+  font-weight: 600;
+}
+.processBox .processIcon {
+  background: #2870ac;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.processBox .processText {
+  position: relative;
+  z-index: 2;
+}
+.processBox .processText p {
+  color: #000;
+  padding-top: 10px;
+  margin: 0px auto;
+  display: block;
+  font-size: 16px;
+}
+.processBox .processText p:first-child {
+  margin-bottom: 20px;
+}
+.processBox::after {
+  width: 100%;
+  height: 80px;
+  background-color: #e5eff9;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  display: block;
+  content: "";
+  left: 0;
+}
+
 .we_supply {
   padding: 4.8rem 40px;
   padding-bottom: 40px;

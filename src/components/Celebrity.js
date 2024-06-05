@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Celebrityvoices() {
   const [items, setItems] = useState([]);
@@ -17,9 +18,9 @@ export default function Celebrityvoices() {
       <section className='celebrityvoices'>     
         <img src={items.celebrity_voices_background.url} alt="" />
         <div className="celebrityvoicesContent">
-            <h3>Celebrity Voices</h3>
-            <p>Make your message stand out with celebrity talent</p>
-            <button className='radius-0rounded-0'>view celebrity voices</button>
+            <h3>{items.cv_title}</h3>
+            <p>{items.cv_description}</p>
+            <Link to={items.cv_button_url} className='button radius-0rounded-0'>{items.cv_button_title} </Link>
         </div>
       </section>
     </div>

@@ -12,6 +12,7 @@ import Celebrity from "./Celebrity";
 import Result from "./Result";
 import VoiceCards from "./VoiceCards";
 import Blog from "./Blog";
+import Ourprocess from "./Ourprocess";
 
 
 function Home() {
@@ -64,6 +65,8 @@ function Home() {
 			{/* ============== Celebrity Voices */}
 			<Celebrity />
 
+			{/* ================= Our Process */}
+			<Ourprocess />
 			{/* ======================= Our Team */}
 			<Team />
 
