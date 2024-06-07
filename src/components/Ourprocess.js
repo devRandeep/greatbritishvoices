@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -11,17 +11,17 @@ export default function Ourprocess() {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
             items: 4,
-            gap: 20,
+            gap: 100,
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 4,
-            gap: 20,
+            gap: 100,
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
             items: 3,
-            gap: 20,
+            gap: 100,
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -30,6 +30,40 @@ export default function Ourprocess() {
             centerSlide: true,
         }
     };
+
+    const ourProcess = [
+        {
+            id: '01',
+            icon: "https://greatbritishtalent.com/static/css/img/001-form.png",
+            processName: '01. Enquiry Form',
+            processText: "Fill in the online enquiry form with as much information as possible, please don't worry if you don't know all the details right now!",
+        },
+        {
+            id: '02',
+            icon: "https://greatbritishtalent.com/static/css/img/002-support.png",
+            processName: '02. Lets Chat',
+            processText: "If you would prefer to chat then simply dial +44 (0) 1753 439 289 where Alex and Kelly will be happy to take your details.",
+        },
+        {
+            id: '03',
+            icon: "https://greatbritishtalent.com/static/css/img/003-loupe.png",
+            processName: '03. Our Search Results',
+            processText: "We are not restricted to the voice artists listed on our website and will create an exciting and bespoke shortlist based on your brief, budget and requirements.",
+        },
+        {
+            id: '04',
+            icon: "https://greatbritishtalent.com/static/css/img/004-hired.png",
+            processName: '04. Select Your Voice Artist',
+            processText: "Working together we will narrow down your shortlist and find the perfect Voice Artist for your event.  You can also create your own shorlist if you wish.",
+        },
+        {
+            id: '05',
+            icon: "https://greatbritishtalent.com/static/css/img/005-conference.png",
+            processName: '05. Voice Artist Delivers',
+            processText: "We will organise logistics and a briefing call for you with your chosen Voice Artist so they are prepared and ready to deliver on the day of your event.",
+        },
+
+    ];
 
 
     return (
@@ -46,24 +80,29 @@ export default function Ourprocess() {
 
                 <Row className='mt-3'>
                     <Carousel
-                        ref={carouselRef1} // Use carouselRef1 for the first Carousel
                         showDots={true}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        infinite={true}
                         responsive={ourProcessSlider}
+                        beforeChange={(current, next) => setCurrentSlide(next)}
                         removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
                     >
-                        <div className="processBox">
-                            <div className="processIcon">
-                                <img src="https://greatbritishtalent.com/static/css/img/001-form.png" alt="" />
+                        {ourProcess.map((processValue, index) => (
+
+                            <div className="processBox" key={index}>
+                                <div className="processIcon">
+                                    <img src={processValue.icon} alt="" />
+                                </div>
+                                <b>{processValue.id}.</b>
+                                <div className="processText">
+                                    <p>{processValue.processName}</p>
+                                    <p>{processValue.processText}</p>
+                                </div>
                             </div>
-                            <b>01.</b>
-                            <div className="processText">
-                                <p>01. Enquiry Form</p>
-                                <p>Fill in the online enquiry form with as much information as possible, please don't worry if you don't know all the details right now!</p>
-                            </div>
-                        </div>
+
+                        ))}
                     </Carousel>
-
-
                 </Row>
             </section>
         </>

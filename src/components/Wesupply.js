@@ -103,7 +103,7 @@ export default function Wesupply() {
                     >
                         {SupplyCard.map((itemcard, index) => (
                             <div className="card" key={index}>
-                                <div className="card_image">
+                                <div className="card_image mx-auto">
                                     <img src={itemcard.iconUrl} alt="" />
                                 </div>
                                 <div className="card_title">

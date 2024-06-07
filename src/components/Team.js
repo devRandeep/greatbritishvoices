@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Team() {
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
-        fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/2/?acf_format=standard")
+        fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
             .then((res) => res.json())
             .then((json) => {
-                setItems(json.acf);
+                setItems(json.acf_fields);
                 setIsLoaded(true);
             });
     }, []);
@@ -22,7 +23,7 @@ export default function Team() {
                     <div className="our_team_red_box" >
                         <div className="title_row">
                             <h3>Our Team</h3>
-                            <h5 className="lets_talk">lets talk</h5>
+                            <h5 className="lets_talk"><Link to="contactus" className="text-black">lets talk</Link></h5>
                         </div>
                         <Row className="extra-width">
                             {/* Item */}
@@ -32,7 +33,7 @@ export default function Team() {
                                         <Row className="align-items-center">
                                             <Col md={3}>
                                                 <div className="profile_img">
-                                                    <img src={items.first_member_image} alt="" />
+                                                    <img src={items.team_member_image_1.url} alt="" />
 
                                                 </div>
                                             </Col>
@@ -54,7 +55,7 @@ export default function Team() {
                                         <Row className="align-items-center">
                                             <Col md={3}>
                                                 <div className="profile_img">
-                                                    <img src={items.second_member_image} alt="" />
+                                                    <img src={items.team_member_image_2.url} alt="" />
 
                                                 </div>
                                             </Col>
@@ -65,7 +66,7 @@ export default function Team() {
                                             </Col>
                                         </Row>
                                         <div className="card_text">
-                                            <p dangerouslySetInnerHTML={{ __html: items.our_team_text_steve }}></p>
+                                            <p dangerouslySetInnerHTML={{ __html: items.our_team_text_steve}}></p>
                                         </div>
                                     </div>
                                 </div>

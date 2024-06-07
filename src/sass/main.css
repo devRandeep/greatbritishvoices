@@ -140,6 +140,8 @@ header {
 
 header li.searchBar {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 header li.searchBar form {
   position: relative;
@@ -189,10 +191,16 @@ header li ul input {
   border: 1px solid #ddd;
   padding: 0px 10px;
   outline: none;
+  color: #000;
 }
 
 .rightHeader {
   text-align: right;
+}
+.rightHeader li:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 
 main.hero {
@@ -244,6 +252,8 @@ main.hero {
 }
 .voicesearchForm div button {
   width: 100%;
+  align-items: center;
+  display: flex;
 }
 
 .section_first {
@@ -518,7 +528,7 @@ footer .footer_right .term_and_condition li {
   padding: 10px;
   border-radius: 10px;
   max-width: 50%;
-  margin: 0px auto;
+  height: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -920,7 +930,6 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
 
 .searchResult {
   position: relative;
-  padding: 3rem 0px;
   background: #1c1c1c;
 }
 
