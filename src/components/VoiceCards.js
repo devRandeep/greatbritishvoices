@@ -32,7 +32,7 @@ export default function VoiceCards() {
                             <div className='voiceBox'>
                                 <div className="profileImage">
                                     <Link to={post.link}>
-                                        <img src="" alt="" />
+                                        <img src={post.thumbnail} alt="" />
                                     </Link>
                                 </div>
                                 <div className="voiceCandidateDetails">

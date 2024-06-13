@@ -33,33 +33,33 @@ export default function Ourprocess() {
 
     const ourProcess = [
         {
-            id: '01',
+
             icon: "https://greatbritishtalent.com/static/css/img/001-form.png",
-            processName: '01. Enquiry Form',
+            processName: 'Enquiry Form',
             processText: "Fill in the online enquiry form with as much information as possible, please don't worry if you don't know all the details right now!",
         },
         {
-            id: '02',
+
             icon: "https://greatbritishtalent.com/static/css/img/002-support.png",
-            processName: '02. Lets Chat',
+            processName: 'Lets Chat',
             processText: "If you would prefer to chat then simply dial +44 (0) 1753 439 289 where Alex and Kelly will be happy to take your details.",
         },
         {
-            id: '03',
+
             icon: "https://greatbritishtalent.com/static/css/img/003-loupe.png",
-            processName: '03. Our Search Results',
+            processName: 'Our Search Results',
             processText: "We are not restricted to the voice artists listed on our website and will create an exciting and bespoke shortlist based on your brief, budget and requirements.",
         },
         {
-            id: '04',
+
             icon: "https://greatbritishtalent.com/static/css/img/004-hired.png",
-            processName: '04. Select Your Voice Artist',
+            processName: 'Select Your Voice Artist',
             processText: "Working together we will narrow down your shortlist and find the perfect Voice Artist for your event.  You can also create your own shorlist if you wish.",
         },
         {
-            id: '05',
+
             icon: "https://greatbritishtalent.com/static/css/img/005-conference.png",
-            processName: '05. Voice Artist Delivers',
+            processName: ' Voice Artist Delivers',
             processText: "We will organise logistics and a briefing call for you with your chosen Voice Artist so they are prepared and ready to deliver on the day of your event.",
         },
 
@@ -89,18 +89,16 @@ export default function Ourprocess() {
                         removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
                     >
                         {ourProcess.map((processValue, index) => (
-
                             <div className="processBox" key={index}>
                                 <div className="processIcon">
                                     <img src={processValue.icon} alt="" />
                                 </div>
-                                <b>{processValue.id}.</b>
+                                <b>0{index + 1}.</b>
                                 <div className="processText">
-                                    <p>{processValue.processName}</p>
+                                    <p>0{index + 1}. {processValue.processName}</p>
                                     <p>{processValue.processText}</p>
                                 </div>
                             </div>
-
                         ))}
                     </Carousel>
                 </Row>

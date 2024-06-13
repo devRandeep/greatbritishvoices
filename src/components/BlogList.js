@@ -12,7 +12,7 @@ export default function BlogList() {
     const itemsPerPage = 20;
 
     useEffect(() => {
-        fetch('https://greatbritishvoices.co.uk/wp-json/custom/v1/posts-in-category/great-british-voices-blog')
+        fetch('https://www.greatbritishvoices.co.uk/wp-json/custom/v1/blog/')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -75,7 +75,7 @@ export default function BlogList() {
                         <Col key={index}>
                             <div className="articleBox">
                                 <div className="articleImage">
-                                    <img src="https://greatbritish.b-cdn.net/wp-content//uploads/2023/11/Why-Choosing-the-Right-UK-Accent-for-your-E-Learning-Voiceover-Matters-1024x256.png" alt={item.post_title} />
+                                    <img src={item.post_thumbnail} alt={item.post_title} />
                                 </div>
                                 <div className="articleDesc">
                                     <span>{item.post_date}</span>

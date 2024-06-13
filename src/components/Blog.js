@@ -8,7 +8,7 @@ export default function Blog() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://greatbritishvoices.co.uk/wp-json/custom/v1/posts-in-category/great-british-voices-blog') // Replace with your API endpoint
+    fetch('https://www.greatbritishvoices.co.uk/wp-json/custom/v1/blog/') // Replace with your API endpoint
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -48,7 +48,7 @@ export default function Blog() {
         <Col md={4}>
           <div className="articleBox" key={index}>
             <div className="articleImage">
-            <img src="https://greatbritish.b-cdn.net/wp-content//uploads/2023/11/Why-Choosing-the-Right-UK-Accent-for-your-E-Learning-Voiceover-Matters-1024x256.png" alt="" />
+            <img src={item.post_thumbnail} alt="" />
             </div>
             <div className="articleDesc">
               <span>{item.post_date}</span>
