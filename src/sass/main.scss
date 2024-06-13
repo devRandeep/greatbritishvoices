@@ -1088,6 +1088,12 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             margin: 30px 0px;
             text-align: left;
             display: block;
+            a {
+                color: #000000;
+                &:hover {
+                    color: #ed174b;
+                }
+            }
         }
     }
 }

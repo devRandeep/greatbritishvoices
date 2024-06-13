@@ -1030,6 +1030,12 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   text-align: left;
   display: block;
 }
+.articleBox .articleDesc h5 a {
+  color: #000000;
+}
+.articleBox .articleDesc h5 a:hover {
+  color: #ed174b;
+}
 
 .inputGroup {
   display: flex;
