@@ -447,6 +447,7 @@ footer .footer_details {
 }
 footer .footer_details ul li {
   padding-top: 1.5rem;
+  display: flex;
 }
 footer .footer_details ul li a {
   color: #fff;
@@ -706,6 +707,7 @@ footer .footer_right .term_and_condition li {
 }
 .get_in_touch .footer_details ul li {
   margin-bottom: 1rem;
+  display: flex;
 }
 .get_in_touch .footer_details ul li svg {
   margin-right: 1rem;
@@ -933,6 +935,20 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background: #1c1c1c;
 }
 
+.shortList {
+  position: absolute;
+  bottom: 27px;
+  left: 0;
+  right: 0;
+  margin: 0px auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+.shortList svg {
+  border-radius: 10px;
+}
+
 .voiceBox {
   background: url(https://greatbritish.b-cdn.net/wp-content/uploads/2020/05/flag.jpg);
   background-size: cover;
@@ -942,6 +958,9 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background-repeat: no-repeat;
   border-radius: 15px;
   overflow: hidden;
+}
+.voiceBox .profileImage {
+  position: relative;
 }
 .voiceBox .profileImage img {
   width: 140px;
@@ -1010,6 +1029,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   margin-bottom: 20px;
   height: 100%;
   margin-bottom: 20px;
+  background: #fff;
 }
 .articleBox .articleImage img {
   width: 100%;
@@ -1068,11 +1088,13 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
 
 .pagination {
   justify-content: center;
+  gap: 10px;
 }
 .pagination .page-link {
   border-color: #dadada;
   color: #1c1a1a;
   padding: 10px 20px;
+  border-radius: 0px !important;
 }
 .pagination .active > .page-link {
   background: #ed174b;
@@ -1279,4 +1301,55 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
     width: 100%;
     float: left;
   }
+}
+.singleBlogPage {
+  position: relative;
+}
+.singleBlogPage h4 {
+  font-weight: 400;
+}
+.singleBlogPage h4 a {
+  color: #ed174b;
+}
+.singleBlogPage p a {
+  color: #ed174b;
+}
+
+.blogBredcrumb {
+  margin-bottom: 50px;
+}
+
+.singleBlogTitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #ed174b;
+  padding: 10px 10px;
+  margin: 0px;
+  align-items: center;
+}
+.singleBlogTitle h4 {
+  color: #fff;
+}
+.singleBlogTitle a {
+  background: #1c1c1c;
+}
+.singleBlogTitle p {
+  margin: 0px;
+}
+.singleBlogTitle .postDate {
+  color: #fff;
+  font-weight: 700 !important;
+  background: #2870ac;
+  padding: 10px 43px;
+  border-radius: 90px;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+}
+
+.newsArticle {
+  background: #1c1c1c;
 }/*# sourceMappingURL=main.css.map */

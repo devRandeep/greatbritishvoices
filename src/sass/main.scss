@@ -480,6 +480,7 @@ footer {
         ul {
             li {
                 padding-top: 1.5rem;
+                display: flex;
                 a {
                     color: #fff;
                     font-size: 1.31vw;
@@ -751,6 +752,7 @@ footer {
         ul {
             li {
                 margin-bottom: 1rem;
+                display: flex;
                 svg {
                     margin-right: 1rem;
                 }
@@ -988,6 +990,20 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     background: #1c1c1c;
 }
 
+.shortList {
+    position: absolute;
+    bottom: 27px;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    svg {
+        border-radius: 10px;
+    }
+}
+
 .voiceBox {
     background: url(https://greatbritish.b-cdn.net/wp-content/uploads/2020/05/flag.jpg);
     background-size: cover;
@@ -998,6 +1014,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     border-radius: 15px;
     overflow: hidden;
     .profileImage {
+        position: relative;
         img {
             width: 140px;
             height: 140px;
@@ -1069,6 +1086,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     margin-bottom: 20px;
     height: 100%;
     margin-bottom: 20px;
+    background: #fff;
     .articleImage {
         img {
             width: 100%;
@@ -1129,11 +1147,13 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
 .pagination {
     justify-content: center;
+    gap: 10px;
     .page-link {
         // background-color: #9b9b9b;
         border-color: #dadada;
         color: #1c1a1a;
         padding: 10px 20px;
+        border-radius: 0px !important;
     }
     .active>.page-link {
         background: #ed174b;
@@ -1382,4 +1402,58 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
         float: left;
     }
     // ========= Close media screen;
+}
+
+.singleBlogPage {
+    position: relative;
+    h4 {
+        font-weight: 400;
+        a {
+            color: #ed174b;
+        }
+    }
+    p {
+        a {
+            color: #ed174b;
+        }
+    }
+}
+
+.blogBredcrumb {
+    margin-bottom: 50px;
+}
+
+.singleBlogTitle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #ed174b;
+    padding: 10px 10px;
+    margin: 0px;
+    align-items: center;
+    h4 {
+        color: #fff;
+    }
+    a {
+        background: #1c1c1c;
+        ;
+    }
+    p {
+        margin: 0px;
+    }
+    .postDate {
+        color: #fff;
+        font-weight: 700 !important;
+        background: #2870ac;
+        padding: 10px 43px;
+        border-radius: 90px;
+        width: fit-content;
+        float: right;
+    }
+}
+
+.newsArticle {
+    background: #1c1c1c;
 }

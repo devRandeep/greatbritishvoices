@@ -103,7 +103,7 @@ export default function Contact() {
       <Helmet>
         <title>Contact  | Great British UK Talent</title>
       </Helmet>
-      <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/contact/" />
+      <SeoApi apiUrl="https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/contact/" />
 
       <section className='page_breadcrumbs'>
                 <Row>

@@ -24,6 +24,7 @@ import Blog from './components/Blog';
 import Result from './components/Result';
 import VoiceCards from './components/VoiceCards';
 import BlogList from './components/BlogList';
+import BlogSingle from './components/BlogSingle';
 
 
 
@@ -33,7 +34,7 @@ function App() {
   return (
     <div className="App">
 
-      <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://greatbritishtalent.com/" />
+      <SeoApi apiUrl="https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/" />
 
       <Head />
 
@@ -49,6 +50,7 @@ function App() {
         <Route exact path="/results" component={Result} />
         <Route exact path="/voicecards" component={VoiceCards} />
         <Route exact path="/bloglist" component={BlogList} />
+        <Route exact path="/blogsingle" component={BlogSingle } />
         <Route component={Error} />
       </Switch>
 

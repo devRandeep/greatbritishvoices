@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Pagination from 'react-bootstrap/Pagination';
+import { Helmet } from 'react-helmet';
+import SeoApi from './SeoApi';
 
 export default function BlogList() {
     const [data, setData] = useState([]);
@@ -58,6 +60,11 @@ export default function BlogList() {
 
     return (
         <>
+            <Helmet>
+                <title>Blog  | Great British UK Talent</title>
+            </Helmet>
+            <SeoApi apiUrl="https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/blog/" />
+
             <section className='newsArticle sectionpadding'>
                 <Row>
                     <div className="inputGroup">

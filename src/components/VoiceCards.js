@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useLocation, Link } from 'react-router-dom';
 import Filterform from './Filterform';
+import { Helmet } from 'react-helmet';
+import SeoApi from './SeoApi';
 
 export default function VoiceCards() {
     const [items, setItems] = useState([]);
@@ -25,6 +27,12 @@ export default function VoiceCards() {
 
     return (
         <>
+
+        <Helmet>
+        <title>Search for a voice | Great British UK Talent</title>
+        </Helmet>
+
+        <SeoApi apiUrl= "https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/talent-search/?accent=GBV_British%2FRegional_Accents" />
             <div className='searchResult py-8  px-8'>
                 <Row>
                     {news_posts.map((post, index) => (

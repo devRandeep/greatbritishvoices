@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -6,6 +6,20 @@ import 'react-multi-carousel/lib/styles.css';
 export default function Ourprocess() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const carouselRef1 = useRef(null); // Ref for the first Carousel  
+
+    const [items, setItems] = useState({});
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
+            .then((res) => res.json())
+            .then((json) => {
+                setItems(json.acf_fields);
+                setIsLoaded(true);
+            });
+    }, []);
+    
+    if (!isLoaded) return <div className='please_wait'> <div className="loader"> </div><span>Data Loading....</span></div>;
 
     const ourProcessSlider = {
         superLargeDesktop: {
@@ -31,48 +45,13 @@ export default function Ourprocess() {
         }
     };
 
-    const ourProcess = [
-        {
-
-            icon: "https://greatbritishtalent.com/static/css/img/001-form.png",
-            processName: 'Enquiry Form',
-            processText: "Fill in the online enquiry form with as much information as possible, please don't worry if you don't know all the details right now!",
-        },
-        {
-
-            icon: "https://greatbritishtalent.com/static/css/img/002-support.png",
-            processName: 'Lets Chat',
-            processText: "If you would prefer to chat then simply dial +44 (0) 1753 439 289 where Alex and Kelly will be happy to take your details.",
-        },
-        {
-
-            icon: "https://greatbritishtalent.com/static/css/img/003-loupe.png",
-            processName: 'Our Search Results',
-            processText: "We are not restricted to the voice artists listed on our website and will create an exciting and bespoke shortlist based on your brief, budget and requirements.",
-        },
-        {
-
-            icon: "https://greatbritishtalent.com/static/css/img/004-hired.png",
-            processName: 'Select Your Voice Artist',
-            processText: "Working together we will narrow down your shortlist and find the perfect Voice Artist for your event.  You can also create your own shorlist if you wish.",
-        },
-        {
-
-            icon: "https://greatbritishtalent.com/static/css/img/005-conference.png",
-            processName: ' Voice Artist Delivers',
-            processText: "We will organise logistics and a briefing call for you with your chosen Voice Artist so they are prepared and ready to deliver on the day of your event.",
-        },
-
-    ];
-
-
     return (
         <>
             <section className='ourProcess sectionpadding'>
                 <Row>
                     <div className="heading_panel">
                         <h3>Our Process</h3>
-                        <p>We are a boutique voice artists bureau and we take great delight and care in discussing and advising you to ensure the voice artist you select adds that extra dimension, turning your event into the most successful and memorable occasion it deserves. Simply call, email or fill in the online enquiry for a swift response.</p>
+                        <p>{items.our_process_description}</p>
                         <div className="slider_control">
                         </div>
                     </div>
@@ -88,15 +67,15 @@ export default function Ourprocess() {
                         beforeChange={(current, next) => setCurrentSlide(next)}
                         removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
                     >
-                        {ourProcess.map((processValue, index) => (
+                        {items.our_process_boxes && items.our_process_boxes.map((processValue, index) => (
                             <div className="processBox" key={index}>
                                 <div className="processIcon">
-                                    <img src={processValue.icon} alt="" />
+                                    <img src="" />
                                 </div>
                                 <b>0{index + 1}.</b>
                                 <div className="processText">
-                                    <p>0{index + 1}. {processValue.processName}</p>
-                                    <p>{processValue.processText}</p>
+                                    <p>{processValue.opb_title}</p>
+                                    <p>{processValue.opb_description}</p>
                                 </div>
                             </div>
                         ))}
