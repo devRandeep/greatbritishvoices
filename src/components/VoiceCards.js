@@ -7,24 +7,27 @@ import SeoApi from './SeoApi';
 
 export default function VoiceCards() {
     const [items, setItems] = useState([]);
-    const [news_posts, setNews_posts] = useState([]);
+    const [posts, setNews_posts] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
     const [voiceCardData, setVoiceCardData] = useState([]);
 
     useEffect(() => {
-        fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
+        fetch("https://greatbritishvoices.co.uk/wp-json/custom/v1/talents?&page=1")
             .then((res) => res.json())
             .then((json) => {
                 setItems(json.acf_fields);
-                setNews_posts(json.news_posts);
+                setNews_posts(json.posts);
                 setIsLoaded(true);
             });
 
-    }, [news_posts]);
+    }, [posts]);
 
     if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
 
+    const showAlert = () => {
+        alert('This is an alert message!');
+      };
     return (
         <>
 
@@ -34,8 +37,8 @@ export default function VoiceCards() {
 
         <SeoApi apiUrl= "https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/talent-search/?accent=GBV_British%2FRegional_Accents" />
             <div className='searchResult py-8  px-8'>
-                <Row>
-                    {news_posts.map((post, index) => (
+                <Row className='row-gap-3'>
+                    {posts.map((post, index) => (
                         <Col md={3} key={index}>
                             <div className='voiceBox'>
                                 <div className="profileImage">
@@ -45,7 +48,7 @@ export default function VoiceCards() {
                                 </div>
                                 <div className="voiceCandidateDetails">
                                     <Link to={post.link}>
-                                        <span className=''>{post.acf_fields.first_name}</span>
+                                        <span className=''>{post.title}</span>
                                     </Link>
                                     <ul>
                                         <li dangerouslySetInnerHTML={{ __html: post.acf_fields.key_information }}></li>
@@ -54,6 +57,13 @@ export default function VoiceCards() {
                             </div>
                         </Col>
                     ))}
+                </Row>
+
+
+                <Row className='mt-4'>
+                    <Col md={12} className='text-center'>
+                        <button id="loadMore" className='' onClick={showAlert}>Load More</button>
+                    </Col>
                 </Row>
             </div>
         </>

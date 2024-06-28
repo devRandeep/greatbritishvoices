@@ -958,6 +958,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background-repeat: no-repeat;
   border-radius: 15px;
   overflow: hidden;
+  height: 100%;
 }
 .voiceBox .profileImage {
   position: relative;
@@ -973,6 +974,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
 .voiceBox .voiceCandidateDetails {
   background: #fff;
   padding-bottom: 30px;
+  height: 100%;
 }
 .voiceBox .voiceCandidateDetails span {
   width: 100%;
