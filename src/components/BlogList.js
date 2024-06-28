@@ -86,9 +86,9 @@ export default function BlogList() {
                                 </div>
                                 <div className="articleDesc">
                                     <span>{item.post_date}</span>
-                                    <h5><a href="">{item.post_title}</a></h5>
+                                    <Link to={`/post/${item.ID}`}><h5 dangerouslySetInnerHTML={{__html: item.post_title}}></h5></Link>
                                     {/* <p dangerouslySetInnerHTML={{__html:item.post_content}}></p> */}
-                                    <Link to="" className='button'>Read More</Link>
+                                    <Link to={`/post/${item.ID}`} className='button'>Read More</Link>
                                 </div>
                             </div>
                         </Col>

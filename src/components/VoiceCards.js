@@ -29,7 +29,7 @@ export default function VoiceCards() {
         <>
 
         <Helmet>
-        <title>Search for a voice | Great British UK Talent</title>
+        <title>Search for a voice | Great British UK Talent sdfsdfsdf</title>
         </Helmet>
 
         <SeoApi apiUrl= "https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/talent-search/?accent=GBV_British%2FRegional_Accents" />

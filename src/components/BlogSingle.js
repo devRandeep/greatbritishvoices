@@ -1,38 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function BlogSingle() {
-    const [postContent, setPostContent] = useState('');
-    const [postThumbnail, setPostThumbnail] = useState('');
-    const [postTitle, setPostTitle] = useState('');
-    const [postDate, setPostDate] = useState('');
+    const [post, setPost] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    let { id } = useParams();
+
     useEffect(() => {
-        fetch('https://www.greatbritishvoices.co.uk/wp-json/custom/v1/blog/')
+        fetch(`https://www.greatbritishvoices.co.uk/wp-json/custom/v1/blog/${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json();    
+                return response.json();
             })
             .then(data => {
-                if (data.length > 0) {
-                    setPostContent(data[0].post_content);
-                    setPostThumbnail(data[0].post_thumbnail);
-                    setPostTitle(data[0].post_title); 
-                    setPostDate(data[0].post_date); 
-                }
+                setPost(data);
                 setLoading(false);
             })
             .catch(error => {
                 setError(error);
                 setLoading(false);
             });
-    }, []);
+    }, [id]);
 
     if (loading) {
         return <div className='please_wait'> <div className="loader"> </div><span>Data Loading....</span></div>;
@@ -42,31 +36,35 @@ export default function BlogSingle() {
         return <div>Error: {error.message}</div>;
     }
 
+    if (!post) {
+        return <div>No post found</div>;
+    }
+
     return (
         <>
             <Helmet>
-                <title>Single Blog</title>
+                <title>{post.post_title} | Great British UK Talent</title>
             </Helmet>
 
             <section className='sectionpadding singleBlogPage'>
                 <div className="blogBredcrumb">
                     <Row className='singleBlogTitle'>
                         <Col md={3}>
-                            <Link to="/bloglist" className="button">Back To Search</Link>
+                            <Link to="/" className="button">Back To Blog List</Link>
                         </Col>
                         <Col md={6} className='text-center'>
-                            <h4>{postTitle}</h4>
+                            <h4>{post.post_title}</h4>
                         </Col>
                         <Col md={3} className='text-end'>
-                            <p className='postDate'>{postDate}</p>
+                            <p className='postDate'>{post.post_date}</p>
                         </Col>
                     </Row>
                     <div className="row profile-top-row news-cover">
-                        <img width="100%" height="373" src={postThumbnail} alt="Blog Thumbnail" />
+                        <img width="100%" height="373" src={post.post_thumbnail} alt="Blog Thumbnail" />
                     </div>
                 </div>
                 <div className='singleBlogContent'>
-                    <div dangerouslySetInnerHTML={{ __html: postContent }} />
+                    <div dangerouslySetInnerHTML={{ __html: post.post_content }} />
                 </div>
             </section>
         </>

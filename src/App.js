@@ -25,6 +25,7 @@ import Result from './components/Result';
 import VoiceCards from './components/VoiceCards';
 import BlogList from './components/BlogList';
 import BlogSingle from './components/BlogSingle';
+import SinglePost from './components/BlogSingle';
 
 
 
@@ -50,7 +51,7 @@ function App() {
         <Route exact path="/results" component={Result} />
         <Route exact path="/voicecards" component={VoiceCards} />
         <Route exact path="/bloglist" component={BlogList} />
-        <Route exact path="/blogsingle" component={BlogSingle } />
+        <Route exact path="/post/:id" component={BlogSingle} />
         <Route component={Error} />
       </Switch>
 
