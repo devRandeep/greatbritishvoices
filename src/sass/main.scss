@@ -3,6 +3,7 @@
 // ************************** Fonts *****************//;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 body {
     font-family: "Roboto", sans-serif;
     overflow-x: hidden;
@@ -55,6 +56,7 @@ button {
     border: none;
     padding: 8px 22px;
     border-radius: 8px;
+
     span {
         padding-right: 10px;
     }
@@ -70,6 +72,7 @@ button {
     border: none;
     padding: 8px 22px;
     border-radius: 8px;
+
     span {
         padding-right: 10px;
     }
@@ -93,28 +96,31 @@ button {
         margin: 0px;
         margin-bottom: 5px;
     }
+
     span {
         font-size: 12px;
         color: #0a3101;
         font-weight: 500;
     }
+
     width: fit-content;
     background: #ddd;
     padding: 10px 20px;
     border-radius: 8px;
     background: rgb(230,
-    255,
-    217);
+        255,
+        217);
     background: linear-gradient(0deg,
-    rgba(230,
-    255,
-    217,
-    1) 0%,
-    rgba(187,
-    246,
-    157,
-    1) 100%);
+        rgba(230,
+            255,
+            217,
+            1) 0%,
+        rgba(187,
+            246,
+            157,
+            1) 100%);
     border: 1px solid rgb(9 173 9 / 15%);
+
     img {
         width: 30px;
     }
@@ -139,6 +145,7 @@ header {
     text-align: center;
     justify-content: left;
     align-items: center;
+
     li {
         a {
             font: 800 16px "Roboto", sans-serif;
@@ -149,6 +156,7 @@ header {
             align-items: center;
             gap: 10px;
         }
+
         .active {
             border-color: #fff;
         }
@@ -160,30 +168,37 @@ header {
         position: relative;
         display: flex;
         align-items: center;
+
         form {
             position: relative;
+
             a {
                 visibility: hidden;
                 position: absolute;
             }
         }
     }
+
     li {
         font-weight: 800;
         position: relative;
+
         span {
             padding-right: 10px;
         }
+
         &:hover {
             ul {
                 visibility: visible;
             }
         }
+
         a {
             color: #fff;
             font-size: 18px;
             font-weight: 800;
         }
+
         ul {
             position: absolute;
             top: 100%;
@@ -194,6 +209,7 @@ header {
             left: -100%;
             visibility: hidden;
             height: fit-contents;
+
             li {
                 a {
                     border: none !important;
@@ -203,6 +219,7 @@ header {
                     padding: 14px 10px !important;
                 }
             }
+
             input {
                 width: 10vw;
                 height: 40px;
@@ -218,6 +235,7 @@ header {
 
 .rightHeader {
     text-align: right;
+
     li {
         &:nth-child(1) {
             display: flex;
@@ -245,6 +263,7 @@ main.hero {
     width: 100%;
     bottom: 3vw;
     z-index: 222;
+
     form {
         display: flex;
         justify-content: space-between;
@@ -254,8 +273,10 @@ main.hero {
         padding: 20px;
         border-radius: 11px;
     }
+
     div {
         width: 100%;
+
         select {
             appearance: auto;
             height: 38px;
@@ -264,6 +285,7 @@ main.hero {
             color: #495057;
             font-size: 15px;
         }
+
         input {
             width: 100%;
             height: 38px;
@@ -272,6 +294,7 @@ main.hero {
             padding: 0px 10px;
             outline: none;
         }
+
         button {
             width: 100%;
             align-items: center;
@@ -284,6 +307,7 @@ main.hero {
     height: 70vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
     .column_first {
         height: 100%;
         width: 100%;
@@ -296,16 +320,19 @@ main.hero {
         justify-content: left;
         padding: 15px;
         padding-top: 10vw;
+
         h1 {
             font-size: 2.5rem;
             color: #fff;
             display: block;
+
             span {
                 font-weight: 100;
                 padding-left: 5px;
             }
         }
     }
+
     .column_second {
         height: 100%;
         width: 100%;
@@ -315,18 +342,22 @@ main.hero {
         background: #ed174b;
         object-fit: cover;
         overflow: hidden;
+
         .swiper {
             height: 100%;
         }
+
         .sliderImage {
             height: 100%;
             width: 100%;
         }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: all 0.3s ease-in-out;
+
             &:hover {
                 transform: scale(1.2);
             }
@@ -338,8 +369,10 @@ main.hero {
     background: #1c1c1c;
     z-index: 222;
     position: relative;
+
     .col-md-4 {
         text-align: left;
+
         img {
             width: 100%;
         }
@@ -358,15 +391,18 @@ main.hero {
     background: #ed174b;
     height: 100%;
     padding: 40px 40px;
+
     .text_box {
         height: auto;
         background: #fff;
         border-radius: .25rem;
         padding: 40px;
+
         h3 {
             font-size: 2.63vw;
             font-weight: 400;
         }
+
         p {
             font-size: 18px;
         }
@@ -381,6 +417,7 @@ main.hero {
     display: flex;
     justify-content: center;
     width: 100%;
+
     img {
         width: 40vw;
     }
@@ -390,6 +427,7 @@ main.hero {
     .img_box {
         background: #1c1c1c;
     }
+
     .img_box {
         padding: 5vw 7.6vh;
     }
@@ -403,9 +441,11 @@ main.hero {
     height: 100%;
     background: #ed174b;
     padding: 40px;
+
     h3 {
         color: #fff;
     }
+
     .lets_talk {
         font-size: 1.24vw;
         position: relative;
@@ -447,6 +487,7 @@ main.hero {
     border-radius: .25rem;
     padding: 1.5rem;
     height: 100%;
+
     .profile_img {
         img {
             border-radius: 50%;
@@ -454,12 +495,14 @@ main.hero {
             width: 100%;
         }
     }
+
     .profile_text {
         h3 {
             color: #1c1c1c;
             width: 10.68vw;
         }
     }
+
     .card_text {
         p {
             padding-top: 1.5rem;
@@ -475,31 +518,38 @@ main.hero {
 footer {
     padding: 30px 40px 16px 40px;
     background-color: #1c1c1c;
+
     .footer_details {
         padding-bottom: 30px;
+
         ul {
             li {
                 padding-top: 1.5rem;
                 display: flex;
+
                 a {
                     color: #fff;
                     font-size: 1.31vw;
                     font-weight: 600;
                 }
+
                 svg {
                     margin-right: 10px;
                 }
             }
         }
     }
+
     .footer_right {
         text-align: right;
+
         .social_media_links {
             display: flex;
             // align-items: center;
             justify-content: right;
             gap: 10px;
             align-items: stretch;
+
             svg {
                 stroke: none;
                 width: 25px;
@@ -508,11 +558,13 @@ footer {
                 height: 100%;
             }
         }
+
         .term_and_condition {
             margin-top: 40px;
             display: flex;
             justify-content: right;
             gap: 10px;
+
             li {
                 font-size: 1.02vw;
             }
@@ -526,21 +578,26 @@ footer {
         font-size: 1.8rem;
         font-weight: 600;
     }
+
     .voicesList {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+
         a {
             font-size: 14px;
             margin-bottom: 9px;
         }
     }
+
     .usefullLinks {
         h3 {
             color: #fff;
             font-size: 1.8rem;
             font-weight: 600;
         }
+
         display: grid;
+
         a {
             font-size: 20px;
             font-weight: 600;
@@ -552,10 +609,15 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    h3 {
+        color: #fff;
+    }
 }
 
 .ourProcess {
     background: #1c1c1c;
+
     .heading_panel {
         display: inline;
         color: #fff;
@@ -571,6 +633,7 @@ footer {
     height: 100%;
     position: relative;
     overflow: hidden;
+
     b {
         position: absolute;
         left: 10px;
@@ -583,6 +646,7 @@ footer {
         font-size: 16px;
         font-weight: 600;
     }
+
     .processIcon {
         background: #2870ac;
         height: 100px;
@@ -595,20 +659,24 @@ footer {
         position: relative;
         z-index: 2;
     }
+
     .processText {
         position: relative;
         z-index: 2;
+
         p {
             color: #000;
             padding-top: 10px;
             margin: 0px auto;
             display: block;
             font-size: 16px;
+
             &:first-child {
                 margin-bottom: 20px;
             }
         }
     }
+
     &::after {
         width: 100%;
         height: 80px;
@@ -625,11 +693,13 @@ footer {
 .we_supply {
     padding: 4.8rem 40px;
     padding-bottom: 40px;
+
     .heading_panel {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
+
     .slide_arrow {
         background: #1c1c1c;
         height: 46px;
@@ -639,9 +709,11 @@ footer {
         color: #fff;
         margin: 0px 5px;
         font-family: 'FontAwesome';
+
         i {
             font-style: normal;
         }
+
         &:hover {
             background-color: #2870ac;
         }
@@ -651,6 +723,7 @@ footer {
 .about_supply {
     .we_supply {
         background: #000;
+
         h3 {
             color: #fff
         }
@@ -658,6 +731,7 @@ footer {
 }
 
 .we_supply_slider {
+
     // display: grid;
     // grid-template-columns: 1fr 1fr 1fr 1fr;
     // gap: 30px;
@@ -671,10 +745,12 @@ footer {
         margin-top: 10px;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, .175) !important;
         height: fit-content;
+
         .card_image {
             position: relative;
             top: 3.6vw;
         }
+
         .card_title {
             color: #212529 !important;
             font-size: 16px;
@@ -685,6 +761,7 @@ footer {
             padding-top: 70px;
             font-weight: 500;
             font-family: "Space Grotesk", sans-serif;
+
             a {
                 color: #007bff;
             }
@@ -701,7 +778,9 @@ footer {
     .row {
         height: 100%;
     }
+
     height: 36vw;
+
     .text_panel_breadcrumbs {
         height: 100%;
         background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(https://greatbritish.b-cdn.net/static/css/img/flag.jpg);
@@ -709,6 +788,7 @@ footer {
         background-repeat: no-repeat;
         padding: 0px 40px;
         padding-top: 6vw;
+
         h1 {
             font-size: 4.97vw;
             color: #fff;
@@ -716,8 +796,10 @@ footer {
             font-weight: 400;
         }
     }
+
     .text_panel_breadcrumbs_image {
         height: 100%;
+
         img {
             width: 100%;
             height: 100%;
@@ -732,6 +814,7 @@ footer {
 
 .contact_form_img {
     text-align: center;
+
     img {
         width: 35vw;
     }
@@ -746,16 +829,20 @@ footer {
 .get_in_touch {
     padding: 40px;
     margin-bottom: 3rem;
+
     .footer_details {
         background-color: #ed174b;
         padding: 1.5rem;
+
         ul {
             li {
                 margin-bottom: 1rem;
                 display: flex;
+
                 svg {
                     margin-right: 1rem;
                 }
+
                 a {
                     font-size: 1.31vw;
                 }
@@ -767,11 +854,13 @@ footer {
 .call_panel {
     background: #1c1c1c;
     padding: 40px;
+
     .row {
         background-color: #e5eff9;
         border-radius: 10px;
         padding: 22px;
     }
+
     .call_btn {
         font-size: 1.5rem;
         font-weight: 500;
@@ -779,6 +868,7 @@ footer {
         color: #fff;
         padding: 1rem;
         border: none;
+
         svg {
             margin-right: 10px;
         }
@@ -795,6 +885,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 15px;
+
     p {
         font-size: 1.5rem;
         margin: 0px;
@@ -805,9 +896,11 @@ footer {
 
 .input_group {
     margin-bottom: 20px;
+
     textarea {
         height: 288px;
     }
+
     button {
         max-width: 150px;
         background: #ed174b;
@@ -826,6 +919,7 @@ footer {
     padding: 10px;
     border: 1px solid #707070;
     outline: none;
+
     &::placeholder {
         text-transform: capitalize;
         font-size: 1rem;
@@ -861,6 +955,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
 .term_condition_text_box {
     padding: 50px 40px;
+
     h3 {
         font-size: 28px;
         margin-top: 20px;
@@ -869,6 +964,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
 .wp-block-table {
     font-size: 1.125rem;
+
     td {
         border: 1px solid;
         padding: .5em;
@@ -880,6 +976,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     background: #ed174b;
     font-family: roboto;
     color: #fff;
+
     a {
         color: #fff;
         text-decoration: underline;
@@ -889,6 +986,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 .please_wait {
     padding: 4rem 0rem;
     text-align: center;
+
     span {
         color: #ed174b;
         font-size: 12px;
@@ -929,6 +1027,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     from {
         opacity: 0.6;
     }
+
     to {
         opacity: 1;
     }
@@ -952,6 +1051,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
@@ -964,9 +1064,11 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 // celebrityvoices;
 .celebrityvoices {
     position: relative;
+
     img {
         width: 100%;
     }
+
     .celebrityvoicesContent {
         text-align: center;
         position: absolute;
@@ -999,6 +1101,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     text-align: center;
     justify-content: center;
     display: flex;
+
     svg {
         border-radius: 10px;
     }
@@ -1014,8 +1117,10 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     border-radius: 15px;
     overflow: hidden;
     height: 100%;
+
     .profileImage {
         position: relative;
+
         img {
             width: 140px;
             height: 140px;
@@ -1025,10 +1130,12 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             overflow: hidden;
         }
     }
+
     .voiceCandidateDetails {
         background: #fff;
         padding-bottom: 30px;
         height: 100%;
+
         span {
             width: 100%;
             color: #ffffff;
@@ -1040,6 +1147,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             display: block;
             padding: 10px;
         }
+
         ul {
             li {
                 color: #333 !important;
@@ -1056,9 +1164,11 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     gap: 20px;
     font-size: 20px;
     padding-bottom: 30px;
+
     p {
         margin: 0px;
     }
+
     a {
         background: #fff;
         color: #000;
@@ -1073,10 +1183,12 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
 .featuredVoices {
     background: #1c1c1c;
+
     .heading_panel {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         h3 {
             color: #fff;
         }
@@ -1089,27 +1201,33 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     height: 100%;
     margin-bottom: 20px;
     background: #fff;
+
     .articleImage {
         img {
             width: 100%;
         }
     }
+
     .articleDesc {
         padding: 20px;
+
         span {
             color: #898989;
             font-size: 12px;
             margin: 20px 0px;
             text-align: left;
         }
+
         h5 {
             color: #000000;
             font-size: 16px;
             margin: 30px 0px;
             text-align: left;
             display: block;
+
             a {
                 color: #000000;
+
                 &:hover {
                     color: #ed174b;
                 }
@@ -1122,6 +1240,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     display: flex;
     gap: 20px;
     position: relative;
+
     i {
         position: absolute;
         z-index: 333;
@@ -1130,6 +1249,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
         font-size: 19px;
         color: #d3d2d2;
     }
+
     input {
         width: 100%;
         padding: 10px 45px;
@@ -1137,6 +1257,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
         border-radius: 5px;
         border: 1px solid #dddd;
         position: relative;
+
         &:before {
             content: '/sdf';
             position: absolute;
@@ -1150,6 +1271,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 .pagination {
     justify-content: center;
     gap: 10px;
+
     .page-link {
         // background-color: #9b9b9b;
         border-color: #dadada;
@@ -1157,6 +1279,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
         padding: 10px 20px;
         border-radius: 0px !important;
     }
+
     .active>.page-link {
         background: #ed174b;
         color: #fff !important;
@@ -1168,26 +1291,32 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     header {
         padding: 10px 10px;
     }
+
     .mobileHeader {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
+
     .desktopHeader {
         display: none;
     }
+
     .mehuToggleButton {
         display: block;
         row-gap: 10px;
         width: fit-content;
+
         span {
             // width: 6%;
             // height: 2px;
             // background: #ccc;
         }
     }
+
     .menuLink {
         display: none;
+
         li {
             a {
                 color: rgba(255, 255, 255, .5);
@@ -1198,23 +1327,29 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             }
         }
     }
+
     .logoWrap {
         width: 60%;
         float: right;
+
         img {
             width: 100%;
         }
     }
+
     .logoWrapHidden {
         display: block;
     }
+
     .skeleton-loader {
         width: 80%;
         height: 307px;
     }
+
     h3 {
         font-size: 26px;
     }
+
     .section_first {
         .column_second {
             img {
@@ -1223,9 +1358,11 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             }
         }
     }
+
     .section_first {
         .column_first {
             justify-content: center;
+
             h1 {
                 font-size: 58px;
                 justify-content: center;
@@ -1233,35 +1370,44 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             }
         }
     }
+
     .what_we_do_box {
         padding: 10px 10px;
     }
+
     .img_box {
         img {
             width: 100%;
         }
     }
+
     .react-multi-carousel-track {
         gap: 0;
     }
+
     .we_supply_slider {
         .card {
             box-shadow: none !important;
+
             .card_title {
                 padding-top: 41px;
                 padding-bottom: 22px;
+
                 a {
                     font-size: 17px;
                 }
             }
         }
     }
+
     .extra-width {
         width: inherit;
         display: grid;
         row-gap: 10px;
+
         .profile_text {
             text-align: center;
+
             h3 {
                 width: fit-content;
                 display: block;
@@ -1270,9 +1416,11 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             }
         }
     }
+
     .logoSection {
         padding: 10px 0px;
     }
+
     .profile_img {
         img {
             height: 137px;
@@ -1281,20 +1429,25 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             display: block;
         }
     }
+
     .card {
         .card_text {
             text-align: center;
+
             p {
                 font-size: 12px;
                 line-height: 24px;
             }
         }
     }
+
     .our_team_red_box {
         padding: 10px;
+
         .lets_talk {
             display: none;
         }
+
         .title_row {
             margin-bottom: 2rem;
             text-align: center;
@@ -1303,6 +1456,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             justify-content: center;
         }
     }
+
     footer {
         .footer_details {
             ul {
@@ -1313,48 +1467,60 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
                 }
             }
         }
+
         .footer_right {
             .social_media_links {
                 justify-content: start;
             }
+
             .term_and_condition {
                 justify-content: start;
+
                 li {
                     a {
                         font-size: 12px;
                     }
+
                     font-size: 12px;
                 }
             }
         }
     }
+
     .page_breadcrumbs {
         height: 50vh;
+
         .text_panel_breadcrumbs {
             text-align: center;
             border-bottom: 10px solid #ed174b;
             display: flex;
             align-items: center;
+
             h1 {
                 font-size: 58px;
             }
         }
     }
+
     .text_panel_breadcrumbs_image {
         display: none;
     }
+
     .about_breadcrumbs {
         height: 50vh;
         overflow: hidden;
     }
+
     .text_contact {
         display: block;
         text-align: center;
+
         p {
             font-size: 16px;
             margin: 15px 0px;
         }
     }
+
     .call_panel {
         .call_btn {
             font-size: 16px;
@@ -1363,35 +1529,43 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             margin: 0px auto;
         }
     }
+
     .what_we_do_box {
         .text_box {
             text-align: center;
+
             h3 {
                 font-size: 26px;
             }
+
             p {
                 font-size: 13px;
                 line-height: 24px;
             }
         }
     }
+
     .contact_form_img {
         img {
             width: 100%;
         }
     }
+
     .get_in_touch {
         margin-bottom: 1rem;
+
         .footer_details {
             ul {
                 li {
                     display: flex;
                     padding: 0px;
                     gap: 10px;
+
                     svg {
                         margin: 0px;
                         width: 20px;
                     }
+
                     a {
                         font-size: 16px;
                     }
@@ -1399,21 +1573,26 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
             }
         }
     }
+
     .captachaPanel {
         width: 100%;
         float: left;
     }
+
     // ========= Close media screen;
 }
 
 .singleBlogPage {
     position: relative;
+
     h4 {
         font-weight: 400;
+
         a {
             color: #ed174b;
         }
     }
+
     p {
         a {
             color: #ed174b;
@@ -1435,16 +1614,20 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     padding: 10px 10px;
     margin: 0px;
     align-items: center;
+
     h4 {
         color: #fff;
     }
+
     a {
         background: #1c1c1c;
         ;
     }
+
     p {
         margin: 0px;
     }
+
     .postDate {
         color: #fff;
         font-weight: 700 !important;
@@ -1458,4 +1641,91 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
 .newsArticle {
     background: #1c1c1c;
+}
+
+.TitleHeader {
+    background: #ed174b;
+
+    h1 {
+        background-color: #1c1c1c;
+        padding: 3rem;
+        color: #fff;
+        border-radius: 15px;
+    }
+}
+
+.TitleRow {
+    h1 {
+        font-size: 2.63vw;
+        color: #ED174B;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.boxPanel__main {
+    text-align: center;
+
+    img {
+        height: 250px;
+        width: 100%;
+        border: 2px solid #E6EDF8;
+        object-fit: contain;
+    }
+
+    .voice__descripiton {
+        padding-top: 10px;
+        text-align: left;
+
+        h6 {
+            color: #6B7176;
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+}
+.aboutGBV{
+    h1{
+        color: #ED174B;
+
+    }
+    p {
+        font-size: 16px;
+        a{
+        color: #ED174B;
+        font-weight: 500;
+
+
+        }
+    }
+}
+.celebrity__voices__bannersection{
+    img{
+        width: 100%;
+    }
+}
+
+.celebrit__voices__text{
+    background: #1c1c1c;
+    h3{
+        a{
+            font-size: 2rem;
+        }
+    }
+    h5{
+        font-size: 18px;
+    }
+    p{
+        color: #fff;
+        font-size: 16px;
+    }
 }

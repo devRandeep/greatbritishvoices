@@ -60,7 +60,7 @@ export default function Header() {
                 </ul>
               </li>
               <li>
-                <NavLink to="/celebrityvoices" exact>Celebrity Voices</NavLink>
+                <NavLink to="/celebrityvoicepage" exact>Celebrity Voices</NavLink>
               </li>
               <li>
                 <NavLink to="/voicecards" exact>Voice Search</NavLink>

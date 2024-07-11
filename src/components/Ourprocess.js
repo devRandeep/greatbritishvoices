@@ -70,7 +70,7 @@ export default function Ourprocess() {
                         {items.our_process_boxes && items.our_process_boxes.map((processValue, index) => (
                             <div className="processBox" key={index}>
                                 <div className="processIcon">
-                                    <img src="" />
+                                    <img src={processValue.opb_image_url} />
                                 </div>
                                 <b>0{index + 1}.</b>
                                 <div className="processText">

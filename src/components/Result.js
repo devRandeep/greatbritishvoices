@@ -9,16 +9,28 @@ export default function Result() {
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
 
-    useEffect(() => {
-        fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
-            .then((res) => res.json())
-            .then((json) => {
-                setNewsPosts(json.news_posts);
-                setIsLoaded(true);
-            })
-            .catch((error) => {
+    const fetchAllPages = async () => {
+        const total_pages = 41; // Total number of pages
+        let allPosts = [];
+
+        for (let page = 1; page <= total_pages; page++) {
+            try {
+                const response = await fetch(`https://greatbritishvoices.co.uk/wp-json/custom/v1/talents?page=${page}`);
+                const json = await response.json();
+                allPosts = allPosts.concat(json.posts);
+            } catch (error) {
                 console.error('Error fetching data:', error);
-            });
+            }
+        }
+
+        return allPosts;
+    };
+
+    useEffect(() => {
+        fetchAllPages().then((allPosts) => {
+            setNewsPosts(allPosts);
+            setIsLoaded(true);
+        });
     }, []); // Fetch data only once on component mount
 
     useEffect(() => {
@@ -38,10 +50,10 @@ export default function Result() {
 
     return (
         <div className='searchResult p-5 pb-0'>
-            <Row>
+            <Row className='row-gap-3'>
                 <div className="searchPanel">
                     <p>{filteredPosts.length} Voice(s) Found</p>
-                    <Link to="/voicecards">Clear Filters
+                    <Link to="/voicecards">Clear Fil    ters
                         <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="red">
                             <path d="M6 6L18 18M18 6L6 18" stroke="red" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -52,7 +64,7 @@ export default function Result() {
                         <div className='voiceBox'>
                             <div className="profileImage">
                                 <Link to={post.link}>
-                                    <img src="" alt="" />
+                                    <img src={post.thumbnails} alt="" />
                                 </Link>
                             </div>
                             <div className="voiceCandidateDetails">

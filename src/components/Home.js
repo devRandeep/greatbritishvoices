@@ -13,6 +13,7 @@ import Result from "./Result";
 import VoiceCards from "./VoiceCards";
 import Blog from "./Blog";
 import Ourprocess from "./Ourprocess";
+import FeaturedVoices from "./FeaturedVoices";
 
 
 function Home() {
@@ -54,7 +55,7 @@ function Home() {
 					</div>
 				</Row>
 				<Row className="pt-3">
-					<VoiceCards />
+			<FeaturedVoices />
 				</Row>
 			</section>
 

@@ -20,7 +20,7 @@ export default function Celebrityvoices() {
         <div className="celebrityvoicesContent">
             <h3>{items.cv_title}</h3>
             <p>{items.cv_description}</p>
-            <Link to={items.cv_button_url} className='button radius-0rounded-0'>{items.cv_button_title} </Link>
+            <Link to="/celebrityvoicepage" className='button radius-0rounded-0'>{items.cv_button_title} </Link>
         </div>
       </section>
     </div>

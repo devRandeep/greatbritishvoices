@@ -26,6 +26,8 @@ import VoiceCards from './components/VoiceCards';
 import BlogList from './components/BlogList';
 import BlogSingle from './components/BlogSingle';
 import SinglePost from './components/BlogSingle';
+import Celebrityvoices from './components/Celebrity';
+import CelebrityVoicePage from './components/CelebrityVoicePage';
 
 
 
@@ -42,6 +44,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/voices" component={Voice} />   
+        <Route exact path="/celebrityvoicepage" component={CelebrityVoicePage} />   
         <Route exact path="/voicesearch" component={VoiceSearch} />
         <Route exact path="/shortlist" component={Shortlist} />
         <Route exact path="/blog" component={Blog} /> 

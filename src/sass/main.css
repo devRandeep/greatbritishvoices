@@ -514,6 +514,9 @@ footer .footer_right .term_and_condition li {
   justify-content: space-between;
   align-items: center;
 }
+.heading_panel h3 {
+  color: #fff;
+}
 
 .ourProcess {
   background: #1c1c1c;
@@ -1354,4 +1357,78 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
 
 .newsArticle {
   background: #1c1c1c;
+}
+
+.TitleHeader {
+  background: #ed174b;
+}
+.TitleHeader h1 {
+  background-color: #1c1c1c;
+  padding: 3rem;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.TitleRow h1 {
+  font-size: 2.63vw;
+  color: #ED174B;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.boxPanel__main {
+  text-align: center;
+}
+.boxPanel__main img {
+  height: 250px;
+  width: 100%;
+  border: 2px solid #E6EDF8;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.boxPanel__main .voice__descripiton {
+  padding-top: 10px;
+  text-align: left;
+}
+.boxPanel__main .voice__descripiton h6 {
+  color: #6B7176;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.boxPanel__main .voice__descripiton p {
+  font-size: 16px;
+}
+
+.aboutGBV h1 {
+  color: #ED174B;
+}
+.aboutGBV p {
+  font-size: 16px;
+}
+.aboutGBV p a {
+  color: #ED174B;
+  font-weight: 500;
+}
+
+.celebrity__voices__bannersection img {
+  width: 100%;
+}
+
+.celebrit__voices__text {
+  background: #1c1c1c;
+}
+.celebrit__voices__text h3 a {
+  font-size: 2rem;
+}
+.celebrit__voices__text h5 {
+  font-size: 18px;
+}
+.celebrit__voices__text p {
+  color: #fff;
+  font-size: 16px;
 }/*# sourceMappingURL=main.css.map */
