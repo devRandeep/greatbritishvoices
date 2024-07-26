@@ -47,15 +47,15 @@ p {
 }
 
 button {
-    max-width: fit-content;
-    background: #ed174b;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #fff;
-    text-align: center;
-    border: none;
-    padding: 8px 22px;
-    border-radius: 8px;
+    max-width: fit-content !important;
+    background: #ed174b !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    text-align: center !important;
+    border: none !important;
+    padding: 8px 22px !important;
+    border-radius: 8px !important;
 
     span {
         padding-right: 10px;
@@ -63,19 +63,41 @@ button {
 }
 
 .button {
-    max-width: fit-content;
-    background: #ed174b;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #fff;
-    text-align: center;
-    border: none;
-    padding: 8px 22px;
-    border-radius: 8px;
+    max-width: fit-content !important;
+    background: #ed174b !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    text-align: center !important;
+    border: none !important;
+    padding: 8px 22px !important;
+    border-radius: 8px !important;
 
     span {
         padding-right: 10px;
     }
+}
+#add__shortlist {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    bottom: 29px;
+    padding: 10px !important;
+    border-radius: 200px !important;
+    background: #fff !important;
+    color: #ed174b !important;
+}
+#cloud {
+    padding: 6px !important;
+    font-size: 24px !important;
+    position: absolute;
+    bottom: 0;
+    margin: 0px auto;
+    left: 16rem;
+    border-radius: 200px !important;
+    background: #fff !important;
+    color: #ff7700 !important;
 }
 
 .submit-error {
@@ -944,12 +966,12 @@ footer {
 
 .react-multi-carousel-dot button {
     border: none !important;
-    background: rgba(0, 0, 0, .2) !important;
+    background: rgba(247, 57, 57, 0.5) !important;
 }
 
 li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     button {
-        background: rgba(0, 0, 0, .5) !important;
+        background:rgb(237 23 75) !important;
     }
 }
 
@@ -1112,7 +1134,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 0px;
     background-repeat: no-repeat;
     border-radius: 15px;
     overflow: hidden;
@@ -1120,6 +1142,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
     .profileImage {
         position: relative;
+        padding-top: 50px;
 
         img {
             width: 140px;
@@ -1604,6 +1627,9 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     margin-bottom: 50px;
 }
 
+.profile-top-row{
+    position: relative;
+}
 .singleBlogTitle {
     position: absolute;
     top: 0;
@@ -1621,7 +1647,7 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
     a {
         background: #1c1c1c;
-        ;
+        
     }
 
     p {
@@ -1636,6 +1662,16 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
         border-radius: 90px;
         width: fit-content;
         float: right;
+    }
+}
+
+a.button.goto__blogPage {
+    align-items: center;
+    display: flex;
+    background: #1c1c1c !important;
+
+    svg{
+        font-size: 27px;
     }
 }
 
@@ -1728,4 +1764,17 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
         color: #fff;
         font-size: 16px;
     }
+}
+
+.cloud__video__audio {
+    display: none;
+}
+
+.react-multi-carousel-dot button{
+
+    width: 12px  !important;
+    height: 10px  !important;
+ 
+    padding: 5px 5px 5px 5px !important;
+ 
 }

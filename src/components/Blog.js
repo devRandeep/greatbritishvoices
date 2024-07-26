@@ -32,6 +32,7 @@ export default function Blog() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+  
   return (
   <>    
     <section className='newsArticle sectionpadding'>
@@ -39,7 +40,7 @@ export default function Blog() {
       <div className="heading_panel">
 						<h3>News Article</h3>
 						<div className="slider_control">
-							<Link to="/bloglist" className="button">View More</Link>
+							<Link to="/blogs" className="button">View More</Link>
 						</div>
 					</div>
       </Row>
@@ -53,7 +54,9 @@ export default function Blog() {
             <div className="articleDesc">
               <span>{item.post_date}</span>
               <h5>{item.post_title}</h5>
-              <a href="" className='button'>Read More</a> 
+              <Link to={`/post/${item.ID}`} className="button">
+                    Read More
+                  </Link>
             </div>
           </div>
         </Col>

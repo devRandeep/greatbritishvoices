@@ -101,7 +101,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact  | Great British UK Talent</title>
+        <title>Hire Presenters, Voices and Speakers | Great British Talent</title>
       </Helmet>
       <SeoApi apiUrl="https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/contact/" />
 

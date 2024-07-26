@@ -28,33 +28,36 @@ import BlogSingle from './components/BlogSingle';
 import SinglePost from './components/BlogSingle';
 import Celebrityvoices from './components/Celebrity';
 import CelebrityVoicePage from './components/CelebrityVoicePage';
+import BritishFemale from './components/BritishFemale';
+import SingleTalents from './components/SingleTalents';
 
 
 
 
 function App() {
-  
   return (
     <div className="App">
 
       <SeoApi apiUrl="https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/" />
-
       <Head />
 
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/voices" component={Voice} />   
-        <Route exact path="/celebrityvoicepage" component={CelebrityVoicePage} />   
+        <Route exact path="/celebrity-voices" component={CelebrityVoicePage} />   
         <Route exact path="/voicesearch" component={VoiceSearch} />
+        <Route exact path="" component={SingleTalents}/>
         <Route exact path="/shortlist" component={Shortlist} />
         <Route exact path="/blog" component={Blog} /> 
         <Route exact path="/contactus" component={Contact} />
         <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/tc" component={Terms} />      
         <Route exact path="/results" component={Result} />
-        <Route exact path="/voicecards" component={VoiceCards} />
-        <Route exact path="/bloglist" component={BlogList} />
+        <Route exact path="/voice-search" component={VoiceCards} />
+        <Route exact path="/blogs" component={BlogList} />
         <Route exact path="/post/:id" component={BlogSingle} />
+        {/* <Route exact path="/singleblog" component={BlogSingle} /> */}
+        <Route exact path="/britishfemale" component={BritishFemale} />
         <Route component={Error} />
       </Switch>
 

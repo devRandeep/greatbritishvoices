@@ -24,7 +24,7 @@ export default function Terms() {
     <div>
       <>
         <Helmet>
-          <title>Terms & Conditions  | Great British UK Talent</title>
+          <title>Terms &#038; Conditions  | Great British UK Talent</title>
         </Helmet>
         <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/tc/" />
         

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom/cjs/react-router-dom.min';
-
+import { MdKeyboardArrowLeft } from "react-icons/md";
 export default function BlogSingle() {
     const [post, setPost] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ export default function BlogSingle() {
     let { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://www.greatbritishvoices.co.uk/wp-json/custom/v1/blog/${id}`)
+        fetch(`https://www.greatbritishvoices.co.uk/wp-json/wp/v2/posts/${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -40,31 +40,39 @@ export default function BlogSingle() {
         return <div>No post found</div>;
     }
 
+ 
+
     return (
         <>
             <Helmet>
-                <title>{post.post_title} | Great British UK Talent</title>
+                <title> | Great British UK Talent</title>
             </Helmet>
+            <section>
+            <div className="row profile-top-row news-cover">
+                        <img width="100%" height="373" src={post.rttpg_featured_image_url.full[0]} alt="Blog Thumbnail" />
 
-            <section className='sectionpadding singleBlogPage'>
-                <div className="blogBredcrumb">
-                    <Row className='singleBlogTitle'>
+                        <Row className='singleBlogTitle'>
                         <Col md={3}>
-                            <Link to="/" className="button">Back To Blog List</Link>
+                            <Link to="/blogs" className="button goto__blogPage"><MdKeyboardArrowLeft />
+                            Back To Blog List</Link>
                         </Col>
                         <Col md={6} className='text-center'>
-                            <h4>{post.post_title}</h4>
+                            <h4>{post.title.rendered}</h4>
                         </Col>
                         <Col md={3} className='text-end'>
-                            <p className='postDate'>{post.post_date}</p>
+                            <p className='postDate'>{post.modified}</p>
                         </Col>
                     </Row>
-                    <div className="row profile-top-row news-cover">
-                        <img width="100%" height="373" src={post.post_thumbnail} alt="Blog Thumbnail" />
                     </div>
+            </section>
+           
+            <section className='sectionpadding singleBlogPage'>
+                <div className="blogBredcrumb">
+              
+                 
                 </div>
-                <div className='singleBlogContent'>
-                    <div dangerouslySetInnerHTML={{ __html: post.post_content }} />
+                <div className='singleBlogContent'> 
+                    <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
                 </div>
             </section>
         </>

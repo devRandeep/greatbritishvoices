@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-
+import { Helmet } from "react-helmet";
+import SeoApi from "./SeoApi";
 export default function Voice() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,6 +31,10 @@ export default function Voice() {
 
   return (
     <>
+    <Helmet>
+				<title>Hire a Professional Voiceover Artist I Great British Voices</title>
+			</Helmet>
+      <SeoApi apiUrl={"https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/voice/"}/>
       <section className="TitleHeader sectionpadding">
         <h1>{items.top_header}</h1>
       </section>

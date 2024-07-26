@@ -50,7 +50,7 @@ function Home() {
 					<div className="heading_panel">
 						<h3>Featured Voices</h3>
 						<div className="slider_control">
-							<Link to="/voicecards" className="button">View More</Link>
+							<Link to="/voice-search" className="button">View More</Link>
 						</div>
 					</div>
 				</Row>

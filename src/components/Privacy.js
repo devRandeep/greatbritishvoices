@@ -22,7 +22,7 @@ export default function Privacy() {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | Great British UK Talent</title>
+        <title>Privacy Policy  | Great British UK Talent</title>
       </Helmet>
       <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/privacy-policy-2/" />
       

@@ -58,7 +58,7 @@ export default function Footer() {
                   <Link to="/privacy" exact>Privacy | </Link>
                 </li>
                 <li>
-                  <Link to="/tc" exact>Terms of Service | </Link>
+                  <Link to="tc" exact>Terms of Service | </Link>
                 </li>
                 <li>Great British UK © 2024</li>
               </ul>
@@ -86,12 +86,12 @@ export default function Footer() {
             <h3>Useful Links</h3>
 
             <div className="usefullLinks">
-              <Link to="/voices" exact>Voice Search</Link>
+              <Link to="/voice-search" exact>Voice Search</Link>
               <Link to="" exact>My Shortlist</Link>
-              <Link to="/bloglist" exact>New Blogs</Link>
+              <Link to="/" exact>New Blogs</Link>
               <Link to="" exact>Events For Awarness Days</Link>
               <Link to="" exact>Speaker Podcast</Link>
-              <Link to="/contactus" exact>Contact Us</Link>             
+              <Link to="/" exact>Contact Us</Link>             
             </div>
           </Col>
         </Row>
