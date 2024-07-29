@@ -1479,4 +1479,65 @@ a.button.goto__blogPage svg {
   width: 12px !important;
   height: 10px !important;
   padding: 5px 5px 5px 5px !important;
+}
+
+.single__talent__bredcrumb {
+  position: relative;
+  padding: 7rem 40px;
+}
+.single__talent__bredcrumb .profile__talent img {
+  border-radius: 100% !important;
+  max-width: 330px !important;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 21px rgba(0, 0, 0, 0.1882352941) !important;
+  border: 7px solid #ed174b !important;
+  min-width: 250px;
+  min-height: 250px;
+  margin: 0x auto;
+}
+.single__talent__bredcrumb .talent_about p {
+  font-weight: 400;
+  line-height: 24px;
+  color: #474747;
+  margin: 0;
+  font-size: 16px;
+  font-family: roboto;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.single__talent__bredcrumb .talent_about p strong {
+  text-align: left;
+}
+.single__talent__bredcrumb .talent_about p strong a {
+  color: #ed174b;
+}
+.single__talent__bredcrumb .talent_about p li {
+  color: #000;
+  font-size: 16px;
+  font-family: roboto;
+  text-align: left;
+}
+
+.parallax-banner {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.moreAbout__talents {
+  background-color: #1c1c1c;
+}
+.moreAbout__talents h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.moreAbout__talents p {
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */

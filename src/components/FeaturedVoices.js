@@ -66,7 +66,7 @@ export default function FeaturedVoices() {
             <Col md={3} key={index}>
               <div className="voiceBox">
                 <div className="profileImage" style={{ display: showAudio[post.id] ? 'none' : 'block' }}>
-                  <Link to={post.link}>
+                  <Link to={`/talent/${post.id}`}>
                     <img src={post.thumbnails} alt="" />
                   </Link>
                   <button id='add__shortlist' onClick={() => handleShortlist(post.id)}><FaRegStar /></button>
@@ -81,7 +81,7 @@ export default function FeaturedVoices() {
                                     ></iframe>
                                 </div>
                 <div className="voiceCandidateDetails">
-                  <Link to={post.link}>
+                  <Link to={`/talent/${post.id}`}>
                     <span className="">{post.title}</span>
                   </Link>
                   <ul>

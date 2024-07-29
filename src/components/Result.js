@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useLocation, Link } from 'react-router-dom';
+import { FaRegStar, FaSoundcloud } from "react-icons/fa";
+
 
 export default function Result() {
     const location = useLocation();
@@ -8,6 +10,11 @@ export default function Result() {
     const [newsPosts, setNewsPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [favorites, setFavorites] = useState(() => {
+        const storedFavorites = localStorage.getItem('favorite');
+        return storedFavorites ? JSON.parse(storedFavorites) : [];
+    });
+    const [showAudio, setShowAudio] = useState({});
 
     const fetchAllPages = async () => {
         const total_pages = 41; // Total number of pages
@@ -25,6 +32,7 @@ export default function Result() {
 
         return allPosts;
     };
+    
 
     useEffect(() => {
         fetchAllPages().then((allPosts) => {
@@ -32,6 +40,24 @@ export default function Result() {
             setIsLoaded(true);
         });
     }, []); // Fetch data only once on component mount
+
+    const handleShortlist = (id) => {
+        setFavorites((prevItems) => {
+            if (!prevItems.includes(id)) {
+                const updatedFavorites = [...prevItems, id];
+                localStorage.setItem('favorite', JSON.stringify(updatedFavorites));
+                return updatedFavorites;
+            }
+            return prevItems;
+        });
+    };
+
+    const toggleAudio = (id) => {
+        setShowAudio((prevShowAudio) => ({
+            ...prevShowAudio,
+            [id]: !prevShowAudio[id]
+        }));
+    };
 
     useEffect(() => {
         if (query) {
@@ -63,12 +89,22 @@ export default function Result() {
                     <Col md={3} key={index}>
                         <div className='voiceBox'>
                             <div className="profileImage">
-                                <Link to={post.link}>
+                                <Link to={`/talent/${post.id}`}>
                                     <img src={post.thumbnails} alt="" />
                                 </Link>
+                                <button id='add__shortlist' onClick={() => handleShortlist(post.id)}><FaRegStar /></button>
+                                <button id='cloud' onClick={() => toggleAudio(post.id)}><FaSoundcloud /></button>
                             </div>
+                            <div className="cloud__video__audio" style={{ display: showAudio[post.id] ? 'block' : 'none' }}>
+                                    <iframe
+                                        title="Voiceover Demo"
+                                        width="100%"
+                                        height="200"
+                                        src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1875780321&show_artwork=true&maxheight=390&maxwidth=640"
+                                    ></iframe>
+                                </div>
                             <div className="voiceCandidateDetails">
-                                <Link to={post.link}>
+                                <Link to={`/talent/${post.id}`}>
                                     <span>{post.title}</span>
                                 </Link>
                                 <ul>

@@ -13,8 +13,11 @@ export default function VoiceCards() {
     const [currentPage, setCurrentPage] = useState(1);
     const [isLoadingMore, setIsLoadingMore] = useState(false);
     const [totalPages, setTotalPages] = useState(0);
-    const [favorites, setFavorites] = useState([]);
-    const [showAudio, setShowAudio] = useState({}); // State to manage visibility of audio players
+    const [favorites, setFavorites] = useState(() => {
+        const storedFavorites = localStorage.getItem('favorite');
+        return storedFavorites ? JSON.parse(storedFavorites) : [];
+    });
+    const [showAudio, setShowAudio] = useState({});
 
     useEffect(() => {
         fetch(`https://greatbritishvoices.co.uk/wp-json/custom/v1/talents?page=${currentPage}`)
@@ -24,7 +27,12 @@ export default function VoiceCards() {
                 setPosts((prevPosts) => [...prevPosts, ...json.posts]);
                 setIsLoaded(true);
                 setIsLoadingMore(false);
-                setTotalPages(json.total_pages); // Assuming the total pages is in json.total_pages
+                setTotalPages(json.total_pages);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+                setIsLoaded(true);
+                setIsLoadingMore(false);
             });
     }, [currentPage]);
 
@@ -46,7 +54,7 @@ export default function VoiceCards() {
                 localStorage.setItem('favorite', JSON.stringify(updatedFavorites));
                 return updatedFavorites;
             }
-            return prevItems; // Return previous items if id is already in the favorites
+            return prevItems;
         });
     };
 
@@ -66,11 +74,11 @@ export default function VoiceCards() {
             <SeoApi apiUrl="https://greatbritishvoices.co.uk/wp-json/rankmath/v1/getHead?url=https://greatbritishvoices.co.uk/talent-search/?accent=GBV_British%2FRegional_Accents" />
             <div className='searchResult py-8 px-8'>
                 <Row className='row-gap-3'>
-                    {posts.map((post, index) => (
-                        <Col md={3} key={index}>
+                    {posts.map((post) => (
+                        <Col md={3} key={post.id}>
                             <div className='voiceBox'>
                                 <div className="profileImage" style={{ display: showAudio[post.id] ? 'none' : 'block' }}>
-                                    <Link to={post.link}>
+                                    <Link to={`/talent/${post.id}`}>
                                         <img src={post.thumbnails} alt={post.title} />
                                     </Link>
                                     <button id='add__shortlist' onClick={() => handleShortlist(post.id)}><FaRegStar /></button>
@@ -80,12 +88,12 @@ export default function VoiceCards() {
                                     <iframe
                                         title="Voiceover Demo"
                                         width="100%"
-                                        height="200"                                      
+                                        height="200"
                                         src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1875780321&show_artwork=true&maxheight=390&maxwidth=640"
                                     ></iframe>
                                 </div>
                                 <div className="voiceCandidateDetails">
-                                    <Link to={post.link}>
+                                    <Link to={`/talent/${post.id}`}>
                                         <span>{post.title}</span>
                                     </Link>
                                     <ul>

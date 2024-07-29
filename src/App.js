@@ -46,7 +46,7 @@ function App() {
         <Route exact path="/voices" component={Voice} />   
         <Route exact path="/celebrity-voices" component={CelebrityVoicePage} />   
         <Route exact path="/voicesearch" component={VoiceSearch} />
-        <Route exact path="/" component={SingleTalents}/>
+        <Route exact path="/talent/:id" component={SingleTalents}/>
         <Route exact path="/shortlist" component={Shortlist} />
         <Route exact path="/blog" component={Blog} /> 
         <Route exact path="/contactus" component={Contact} />

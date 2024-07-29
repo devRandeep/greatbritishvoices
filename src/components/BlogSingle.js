@@ -45,7 +45,7 @@ export default function BlogSingle() {
     return (
         <>
             <Helmet>
-                <title> | Great British UK Talent</title>
+                <title>{post.title.rendered} | Great British UK Talent</title>
             </Helmet>
             <section>
             <div className="row profile-top-row news-cover">
