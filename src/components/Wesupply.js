@@ -85,7 +85,7 @@ export default function Wesupply() {
         <section className="we_supply">
             <Row className='align-items-center'>
                 <div className="heading_panel">
-                    <h3>We supply</h3>
+                    <h1>We supply</h1>
                     <div className="slider_control">
                         <button className='slide_arrow' id='next' onClick={handlePrev}><i className="fa-solid fa-chevron-left"></i></button>
                         <button className='slide_arrow' id='prev' onClick={handleNext}><i className="fa-solid fa-chevron-right"></i></button>

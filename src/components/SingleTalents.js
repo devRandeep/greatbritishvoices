@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Helmet } from "react-helmet";
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 export default function SingleTalents() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-
-
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [fieldData, setFieldData] = useState({
-    your_name: '',
-    your_email: '',
-    your_number: '',
-    your_message: '',
-    _wpcf7_unit_tag: 1932
+    your_name: "",
+    your_email: "",
+    your_number: "",
+    your_message: "",
+    _wpcf7_unit_tag: 1932,
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [verified, setVerified] = useState(false);
+  const [relatedVoices, setRelatedVoices] = useState([]); // Ensure it's initialized as an array
 
   let { id } = useParams();
+  let history = useHistory();
 
   useEffect(() => {
     fetch(`https://greatbritishvoices.co.uk/wp-json/custom/v1/news/${id}`)
@@ -46,13 +47,31 @@ export default function SingleTalents() {
   }, [id]);
 
   useEffect(() => {
-    fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/3078")
+    fetch(
+      "https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/3078"
+    )
       .then((res) => res.json())
       .then((json) => {
         setItems(json.acf_fields);
         setIsLoaded(true);
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`https://greatbritishvoices.co.uk/wp-json/custom/v1/talents/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setRelatedVoices(data);
+        } else {
+          setRelatedVoices([]); // Fallback if the response is not an array
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching related voices:", error);
+        setRelatedVoices([]); // Set to empty array on error
+      });
+  }, [id]);
 
   if (loading) {
     return (
@@ -71,13 +90,12 @@ export default function SingleTalents() {
     return <div>No post found</div>;
   }
 
-
-  // *********** Form Validation *******************//;
+  // Form Validation and Submission
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFieldData({
       ...fieldData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -90,50 +108,57 @@ export default function SingleTalents() {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(fieldData.your_email)) {
-      setSubmitError('Invalid email format');
+      setSubmitError("Invalid email format");
       setSubmitting(false);
       return;
     }
 
     const formData = new FormData();
-    formData.append('your_name', fieldData.your_name);
-    formData.append('your_email', fieldData.your_email);
-    formData.append('your_number', fieldData.your_number);
-    formData.append('_wpcf7_unit_tag', 1932);
-    formData.append('your_message', fieldData.your_message);  
+    formData.append("your_name", fieldData.your_name);
+    formData.append("your_email", fieldData.your_email);
+    formData.append("your_number", fieldData.your_number);
+    formData.append("_wpcf7_unit_tag", 1932);
+    formData.append("your_message", fieldData.your_message);
 
-    fetch('https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/3078', {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => {
+    fetch(
+      "https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/3078",
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         setSubmitSuccess(true);
         setFieldData({
-          your_name: '',
-          your_email: '',
-          your_number: '',
-          your_message: '',
-          _wpcf7_unit_tag: 1932
+          your_name: "",
+          your_email: "",
+          your_number: "",
+          your_message: "",
+          _wpcf7_unit_tag: 1932,
         });
         setSubmitting(false);
       })
-      .catch(error => {
-        console.error('There was a problem submitting the form:', error);
+      .catch((error) => {
+        console.error("There was a problem submitting the form:", error);
         setSubmitting(false);
-        setSubmitError('There was a problem submitting the form. Please try again later.');
+        setSubmitError(
+          "There was a problem submitting the form. Please try again later."
+        );
       });
   };
 
-  // ************* This function for ReCAPTCHA *********** //;  
-  const ReCaptcha = () => {
-    const [Verified, setVerified] = useState(false);
-  }
-  function onChange(value) {
+  const onChange = (value) => {
     console.log("Captcha value:", value);
-  }
+    setVerified(true);
+  };
+
+  const handleBackClick = () => {
+    history.goBack();
+  };
+
   return (
     <>
       <Helmet>
@@ -166,7 +191,7 @@ export default function SingleTalents() {
           <Col md="8">
             <div className="talent_about">
               <h2>{post.first_name}</h2>
-              <p>Gender:{post.gender}</p>
+              <p>Gender: {post.gender}</p>
               <p dangerouslySetInnerHTML={{ __html: post.key_information }}></p>
               <p dangerouslySetInnerHTML={{ __html: post.about_speaker }}></p>
             </div>
@@ -197,37 +222,92 @@ export default function SingleTalents() {
             <div className="contact_form">
               <h3>Get In Touch</h3>
 
-              <form className="submit_form" onSubmit={handleSubmit} encType="multipart/form-data">
+              <form
+                className="submit_form"
+                onSubmit={handleSubmit}
+                encType="multipart/form-data"
+              >
                 {/* Input */}
                 <div className="input_group">
-                  <input type="text" placeholder="Name" name="your_name" className="input_design" id="name" required value={fieldData.your_name}
-                    onChange={handleChange} />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="your_name"
+                    className="input_design"
+                    id="name"
+                    required
+                    value={fieldData.your_name}
+                    onChange={handleChange}
+                  />
                 </div>
                 {/* Input */}
                 <div className="input_group">
-                  <input type="email" placeholder="Email" name="your_email" id="email" className="input_design" required value={fieldData.your_email}
-                    onChange={handleChange} />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    name="your_email"
+                    id="email"
+                    className="input_design"
+                    required
+                    value={fieldData.your_email}
+                    onChange={handleChange}
+                  />
                   {submitError && <p className="submit-error">{submitError}</p>}
                 </div>
                 {/* Input */}
                 <div className="input_group">
-                  <input type="text" placeholder="Contact Number" name="your_number" id="phone" className="input_design" required value={fieldData.your_number}
-                    onChange={handleChange} />
+                  <input
+                    type="text"
+                    placeholder="Contact Number"
+                    name="your_number"
+                    id="phone"
+                    className="input_design"
+                    required
+                    value={fieldData.your_number}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="input_group">
-                  <textarea placeholder="Message" name="your_message" id="message" className="input_design" required value={fieldData.your_message}
-                    onChange={handleChange} />
+                  <textarea
+                    placeholder="Message"
+                    name="your_message"
+                    id="message"
+                    className="input_design"
+                    required
+                    value={fieldData.your_message}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="input_group captachaPanel">
-                  <ReCAPTCHA sitekey="6LdHCM4pAAAAAFqVjLpn9YbO851K_eWCxourodtW" onChange={onChange} />
+                  <ReCAPTCHA
+                    sitekey="6LdHCM4pAAAAAFqVjB4zBx_YMF6hgxkTIsyoTxrV"
+                    onChange={onChange}
+                  />
                 </div>
-                <div className="input_group">
-                  <button className="btn_site" type="submit" disabled={submitting} >
-                    {submitting ? 'Submitting...' : 'Send'}
+                <div className="input_group submit_btn">
+                  <button
+                    type="submit"
+                    className="button"
+                    disabled={!verified || submitting}
+                  >
+                    Submit
                   </button>
+                  {submitting && <div className="loader"></div>}
                 </div>
                 <div className="input_group">
-                  {submitSuccess && <div className="submit-success"> <p><img src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/good-job-hand-2-svgrepo-com.png" alt="" />Thank You For Contacting!</p> <span>We will get back to you shortly.</span></div>}
+                  {submitSuccess && (
+                    <div className="submit-success">
+                      {" "}
+                      <p>
+                        <img
+                          src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/good-job-hand-2-svgrepo-com.png"
+                          alt=""
+                        />
+                        Thank You For Contacting!
+                      </p>{" "}
+                      <span>We will get back to you shortly.</span>
+                    </div>
+                  )}
                 </div>
               </form>
             </div>
@@ -250,7 +330,9 @@ export default function SingleTalents() {
                     >
                       <path d="M332.797,13.699c-1.489-1.306-3.608-1.609-5.404-0.776L2.893,163.695c-1.747,0.812-2.872,2.555-2.893,4.481 s1.067,3.693,2.797,4.542l91.833,45.068c1.684,0.827,3.692,0.64,5.196-0.484l89.287-66.734l-70.094,72.1 c-1,1.029-1.51,2.438-1.4,3.868l6.979,90.889c0.155,2.014,1.505,3.736,3.424,4.367c0.513,0.168,1.04,0.25,1.561,0.25 c1.429,0,2.819-0.613,3.786-1.733l48.742-56.482l60.255,28.79c1.308,0.625,2.822,0.651,4.151,0.073 c1.329-0.579,2.341-1.705,2.775-3.087L334.27,18.956C334.864,17.066,334.285,15.005,332.797,13.699z" />
                     </svg>
-                    <a href="mailto:alex@greatbritishvoices.co.uk">{items.email}</a>
+                    <a href="mailto:alex@greatbritishvoices.co.uk">
+                      {items.email}
+                    </a>
                   </li>
 
                   <li>
@@ -271,6 +353,37 @@ export default function SingleTalents() {
               </div>
             </Col>
           </Col>
+        </Row>
+      </section>
+
+      <section className="testimonials sectionpadding">
+        <Container>
+          <Row>
+                    <h2>Testimonials</h2>                    
+                <p dangerouslySetInnerHTML={{__html:post.testimonials}}></p>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="related-voices sectionpadding">
+        <h2>Similar Talent</h2>
+        <Row>
+          {Array.isArray(relatedVoices) && relatedVoices.length > 0 ? (
+            relatedVoices.map((voice, index) => (
+              <Col md="4" key={index}>
+                <div className="related-voice-card">
+                  <img src={voice.profile_image} alt={voice.name} />
+                  <h3>{voice.name}</h3>
+                  <p>{voice.description}</p>
+                  <Link to={`/voice/${voice.id}`}>Learn More</Link>
+                </div>
+              </Col>
+            ))
+          ) : (
+            <Col>
+              <p>No related voices found.</p>
+            </Col>
+          )}
         </Row>
       </section>
     </>

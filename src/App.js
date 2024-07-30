@@ -57,7 +57,7 @@ function App() {
         <Route exact path="/blogs" component={BlogList} />
         <Route exact path="/post/:id" component={BlogSingle} />
         {/* <Route exact path="/singleblog" component={BlogSingle} /> */}
-        <Route exact path="/britishfemale" component={BritishFemale} />
+        <Route exact path="/british-female" component={BritishFemale} />
         <Route component={Error} />
       </Switch>
 

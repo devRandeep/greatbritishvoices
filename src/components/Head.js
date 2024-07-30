@@ -46,7 +46,7 @@ export default function Header() {
               <li>
                 <NavLink to="/voices" exact>Voices</NavLink>
                 <ul>
-                  <li><NavLink to="/britishfemale" exact>British Female Voiceovers</NavLink></li>
+                  <li><NavLink to="/british-female" exact>British Female Voiceovers</NavLink></li>
                   <li><NavLink to="/" exact>British Male Voiceovers</NavLink></li>
                   <li><NavLink to="/" exact>Broadcasters</NavLink></li>
                   <li><NavLink to="/" exact>Celebrity Voices Overs</NavLink></li>

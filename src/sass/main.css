@@ -1335,6 +1335,21 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
 .singleBlogPage {
   position: relative;
 }
+.singleBlogPage .singleBlogContent p {
+  font-size: 16px;
+  margin: 0px;
+  color: #474747;
+}
+.singleBlogPage .singleBlogContent h2 {
+  margin: 20px 0px;
+}
+.singleBlogPage .singleBlogContent h2 a {
+  color: #ED174B;
+  font-size: inherit;
+}
+.singleBlogPage .singleBlogContent figure {
+  margin: 20px 0px;
+}
 .singleBlogPage h4 {
   font-weight: 400;
 }
@@ -1496,7 +1511,7 @@ a.button.goto__blogPage svg {
   border: 7px solid #ed174b !important;
   min-width: 250px;
   min-height: 250px;
-  margin: 0x auto;
+  margin: 0px auto;
 }
 .single__talent__bredcrumb .talent_about p {
   font-weight: 400;
@@ -1521,6 +1536,13 @@ a.button.goto__blogPage svg {
   font-family: roboto;
   text-align: left;
 }
+.single__talent__bredcrumb .talent_about p h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.single__talent__bredcrumb .talent_about p h4 a {
+  color: #ED174B;
+}
 
 .parallax-banner {
   height: 400px;
@@ -1540,4 +1562,27 @@ a.button.goto__blogPage svg {
 }
 .moreAbout__talents p {
   color: #fff;
+}
+
+.testimonials {
+  background: #ed174b;
+  text-align: center;
+  color: #fff;
+  padding: 4rem 0px;
+}
+.testimonials h2 {
+  margin-bottom: 40px;
+}
+.testimonials p {
+  font-style: italic;
+  font-weight: 200;
+  line-height: 49px;
+  font-size: 22px;
+}
+.testimonials p strong {
+  font-weight: 600;
+}
+
+.related-voices {
+  background: #E5EFF9;
 }/*# sourceMappingURL=main.css.map */
