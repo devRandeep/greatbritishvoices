@@ -79,8 +79,17 @@ button span {
   bottom: 29px;
   padding: 10px !important;
   border-radius: 200px !important;
-  background: #fff !important;
-  color: #ed174b !important;
+  background: #fff;
+  color: #ed174b;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.shortListed {
+  background: #ed174b !important;
+  color: #ffffff !important;
 }
 
 #cloud {

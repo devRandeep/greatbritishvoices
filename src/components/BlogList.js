@@ -97,7 +97,9 @@ export default function BlogList() {
                       dangerouslySetInnerHTML={{ __html: item.post_title }}
                     ></h5>
                   </Link>
-                  {/* <p dangerouslySetInnerHTML={{__html:item.post_content}}></p> */}
+                  {/* <p
+                    dangerouslySetInnerHTML={{ __html: item.post_content }}
+                  ></p> */}
                   <Link to={`/post/${item.ID}`} className="button">
                     Read More
                   </Link>

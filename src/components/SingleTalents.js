@@ -359,8 +359,8 @@ export default function SingleTalents() {
       <section className="testimonials sectionpadding">
         <Container>
           <Row>
-                    <h2>Testimonials</h2>                    
-                <p dangerouslySetInnerHTML={{__html:post.testimonials}}></p>
+            <h2>Testimonials</h2>
+            <p dangerouslySetInnerHTML={{ __html: post.testimonials }}></p>
           </Row>
         </Container>
       </section>
