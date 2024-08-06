@@ -1594,4 +1594,17 @@ a.button.goto__blogPage svg {
 
 .related-voices {
   background: #E5EFF9;
+}
+
+.british__female__voiceovers {
+  background: #1c1c1c;
+}
+.british__female__voiceovers .row {
+  background: #ed174b;
+}
+.british__female__voiceovers .voice__text__panel {
+  background: #1c1c1c;
+  padding: 3rem;
+  border-radius: 15px;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */

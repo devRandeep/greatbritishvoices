@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
 
 export default function BritishFemale() {
   const [items, setItems] = useState();
@@ -25,5 +26,25 @@ export default function BritishFemale() {
       </div>
     );
 
-  return <></>;
+  return (
+    <>
+      <section className="british__female__voiceovers sectionpadding">
+        <Row className="align-items-center p-4">
+          <Col md={2}>
+            <img
+              src="	https://greatbritish.b-cdn.net/wp-content//uploads/2022/05/Female-Voices-at-Great-British-Voices.png
+"
+              alt=""
+            />
+          </Col>
+          <Col md={10}>
+            <div className="voice__text__panel">
+              {/* <h1>{date}</h1> */}
+              {/* <p dangerouslySetInnerHTML={{__html:acf.topic_description}}></p> */}
+            </div>
+          </Col>
+        </Row>
+      </section>
+    </>
+  );
 }
