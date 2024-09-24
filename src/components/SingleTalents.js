@@ -182,10 +182,7 @@ export default function SingleTalents() {
         <Row className="align-items-center ">
           <Col md="4">
             <div className="profile__talent text-center">
-              <img
-                src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/TBV-logo-Black-Large.jpg"
-                alt=""
-              />
+              <img src={post.featured_image} alt=""/>
             </div>
           </Col>
           <Col md="8">

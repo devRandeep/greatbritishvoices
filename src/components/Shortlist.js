@@ -49,7 +49,7 @@ export default function Shortlist() {
               <div className="voiceBox">
                 <div className="profileImage">
                   <Link to={`/talent/${post.id}`}>
-                    <img src={post.thumbnails} alt="" />
+                    <img src={post.featured_image} alt="" />
                   </Link>
                   <li
                     id="add__shortlist"

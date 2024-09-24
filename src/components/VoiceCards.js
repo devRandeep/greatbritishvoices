@@ -28,6 +28,7 @@ export default function VoiceCards() {
         setIsLoaded(true);
         setIsLoadingMore(false);
         setTotalPages(json.total_pages);
+        // metaItems(json.meta);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -82,7 +83,7 @@ export default function VoiceCards() {
       <div className="searchResult py-8 px-8">
         <Row className="row-gap-3">
           {posts.map((post) => (
-            <Col md={3} key={post.id}>
+            <Col md={4} key={post.id}>
               <div className="voiceBox">
                 <div
                   className="profileImage"
@@ -114,7 +115,7 @@ export default function VoiceCards() {
                     title="Voiceover Demo"
                     width="100%"
                     height="200"
-                    src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1875780321&show_artwork=true&maxheight=390&maxwidth=640"
+                    src={post.meta.sound}
                   ></iframe>
                 </div>
                 <div className="voiceCandidateDetails">

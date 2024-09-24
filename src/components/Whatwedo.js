@@ -5,7 +5,9 @@ export default function Whatwedo() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	
 	useEffect(() => {
-		fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
+		fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740", {
+            mode: 'no-cors'
+		})
 			.then((res) => res.json())
 			.then((json) => {
 				setItems(json.acf_fields);
@@ -22,7 +24,7 @@ export default function Whatwedo() {
 						<h3>
 							What we do
 						</h3>
-						<p dangerouslySetInnerHTML={{ __html: items.second_section_text }}></p>
+						<p dangerouslySetInnerHTML={{ __html:items.second_section_text }}></p>
 					</div>
 				</div>
 				<div className="img_box">

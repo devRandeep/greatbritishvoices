@@ -8,7 +8,9 @@ export default function Blog() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://www.greatbritishvoices.co.uk/wp-json/custom/v1/blog/') // Replace with your API endpoint
+    fetch('https://www.greatbritishvoices.co.uk/wp-json/custom/v1/blog/',{
+      mode: 'no-cors'
+    }) // Replace with your API endpoint
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

@@ -6,7 +6,9 @@ export default function Team() {
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
-        fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
+        fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740",{
+            mode: 'no-cors'
+        })
             .then((res) => res.json())
             .then((json) => {
                 setItems(json.acf_fields);
@@ -28,7 +30,7 @@ export default function Team() {
                         <Row className="extra-width">
                             {/* Item */}
                             <Col>
-                                <div className=" card team_person">
+                                <div className="card team_person">
                                     <div className="profile_box">
                                         <Row className="align-items-center">
                                             <Col md={3}>
