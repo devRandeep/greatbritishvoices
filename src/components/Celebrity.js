@@ -5,9 +5,7 @@ export default function Celebrityvoices() {
   const [items, setItems] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-		fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740",{
-      mode: 'no-cors'
-    })
+		fetch("https://www.greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
 			.then((res) => res.json())
 			.then((json) => {
 				setItems(json.acf_fields);

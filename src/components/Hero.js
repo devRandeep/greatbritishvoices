@@ -13,15 +13,14 @@ export default function Hero() {
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
-        fetch("https://greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740",
-            {
-                mode: 'no-cors'
-            }
-        )
+        fetch("https://greatbritishvoices.co.uk/wp-json/custom/v1/full-post/10740")
             .then((res) => res.json())
             .then((json) => {
                 setItems(json.acf);
                 setIsLoaded(true);
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
             });
     }, []);
     // if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;

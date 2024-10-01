@@ -19,9 +19,7 @@ export default function FeaturedVoices() {
   const [showAudio, setShowAudio] = useState({});
 
   useEffect(() => {
-    fetch(`https://greatbritishvoices.co.uk/wp-json/custom/v1/talents`,{
-      mode: 'no-cors'
-    })
+    fetch(`https://greatbritishvoices.co.uk/wp-json/custom/v1/talents`)
       .then((res) => res.json())
       .then((json) => {
         setItems(json.acf_fields);
