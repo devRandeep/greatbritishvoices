@@ -87,13 +87,13 @@ button {
     padding: 10px !important;
     border-radius: 200px !important;
     background: #fff;
-    color: #ed174b ;
+    color: #ed174b;
     width: fit-content;
     cursor: pointer;
     border: 2px solid #fff;
 }
 
-.shortListed{
+.shortListed {
     background: #ed174b !important;
     color: #ffffff !important;
 }
@@ -1628,7 +1628,8 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
 
         h2 {
             margin: 20px 0px;
-            a{
+
+            a {
                 color: #ED174B;
                 font-size: inherit;
             }
@@ -1926,17 +1927,25 @@ a.button.goto__blogPage {
     background: #E5EFF9;
 }
 
-.british__female__voiceovers{
+.british__female__voiceovers {
 
     background: #1c1c1c;
-    .row{
+
+    .row {
         background: #ed174b;
     }
-    .voice__text__panel{
-    background: #1c1c1c;
-    padding: 3rem;
-    border-radius: 15px;
-    color: #fff;
+
+    .voice__text__panel {
+        background: #1c1c1c;
+        padding: 3rem;
+        border-radius: 15px;
+        color: #fff;
+
+        a {
+            color: #ed174b;
+            font-size: 18px;
+        }
 
     }
+
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
 export default function BritishFemale() {
-  const [items, setItems] = useState();
+  const [items, setItems] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -13,18 +13,30 @@ export default function BritishFemale() {
     )
       .then((res) => res.json())
       .then((json) => {
-        setItems(json);
+        setItems(json); // Save the whole response
+        setIsLoaded(true);
+      })
+      .catch((error) => {
+        setError(error);
         setIsLoaded(true);
       });
   }, []);
-  if (!isLoaded)
+
+  if (!isLoaded) {
     return (
       <div className="please_wait">
-        {" "}
-        <div class="loader"> </div>
+        <div className="loader"></div>
         <span>Data Loading....</span>
       </div>
     );
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  // Ensure that the acf field exists before accessing it
+  const acf = items && items.length > 0 ? items[0].acf : null;
 
   return (
     <>
@@ -32,16 +44,17 @@ export default function BritishFemale() {
         <Row className="align-items-center p-4">
           <Col md={2}>
             <img
-              src="	https://greatbritish.b-cdn.net/wp-content//uploads/2022/05/Female-Voices-at-Great-British-Voices.png
-"
+              src={acf.topic_image.url}
               alt=""
             />
           </Col>
           <Col md={10}>
-            <div className="voice__text__panel">
-              {/* <h1>{date}</h1> */}
-              {/* <p dangerouslySetInnerHTML={{__html:acf.topic_description}}></p> */}
-            </div>
+            {acf && (
+              <div className="voice__text__panel">
+                <h1>{acf.topic_title}</h1>
+                <p dangerouslySetInnerHTML={{ __html: acf.topic_description }}></p>
+              </div>
+            )}
           </Col>
         </Row>
       </section>
