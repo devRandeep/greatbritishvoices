@@ -6,9 +6,7 @@ export default function SeoApi({ apiUrl }) {
   const [finalTag, setFinalTag] = useState([]);
 
   useEffect(() => {
-    fetch(apiUrl,{
-      mode: 'no-cors'
-    })
+    fetch(apiUrl)
       .then((res) => res.json())
       .then((json) => {
         const htmlTags = json.head || "";
