@@ -5,11 +5,14 @@ import { Col, Dropdown, Row } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import { BrowserRouter, Link, NavLink, Router } from "react-router-dom";
 import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+import { useEffect } from "react";
+
 
 export default function Header() {
   const logoImage = "https://greatbritish.b-cdn.net/wp-content/uploads/2022/01/gbt-logo.png"
   const [menuVisible, setMenuVisible] = useState(false);
   const [logoVisible, setLogoVisible] = useState(true);
+  const [topics, setTopics] = useState([]);
 
   const [searchTerm, setSearchTerm] = useState('');
   // Search 
@@ -27,6 +30,22 @@ export default function Header() {
     const logoWrap = document.querySelector('.menuLink');
     logoWrap.classList.remove('logoWrapHidden');
   }
+
+
+  // Fetch voice categories form API; 
+  useEffect(() => {
+    fetch('https://greatbritishvoices.co.uk/wp-json/wp/v2/pages/?parent=14275&acf_format=standard')
+      .then(response => response.json())
+      .then(data => {
+        const topicTitles = data
+          .map(item => item.acf?.topic_image?.title)
+          .filter(Boolean);
+        setTopics(topicTitles);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+
   return (
     <>
       <header>
@@ -46,18 +65,16 @@ export default function Header() {
               <li>
                 <NavLink to="/voices" exact>Voices</NavLink>
                 <ul>
-                  <li><NavLink to="/british-female" exact>British Female Voiceovers</NavLink></li>
-                  <li><NavLink to="/" exact>British Male Voiceovers</NavLink></li>
-                  <li><NavLink to="/" exact>Broadcasters</NavLink></li>
-                  <li><NavLink to="/" exact>Celebrity Voices Overs</NavLink></li>
-                  <li><NavLink to="/" exact>Character Actors</NavLink></li>
-                  <li><NavLink to="/" exact>Child & Teen Voices</NavLink></li>
-                  <li><NavLink to="/" exact>E-learning & Explainer</NavLink></li>
-                  <li><NavLink to="/" exact>Home Studio Recording</NavLink></li>
-                  <li><NavLink to="/" exact>International Voiceover Artists</NavLink></li>
-                  <li><NavLink to="/" exact>Medical Voiceover</NavLink></li>
-                  <li><NavLink to="/" exact>Sports Commentators</NavLink></li>
-                  <li><NavLink to="/" exact>Voice Of God</NavLink></li>             
+                  <ul>
+                    {topics.map((title, index) => (
+                      <li key={index}>
+                        <NavLink to={`${title.toLowerCase().replace(/\s+/g, '-')}`} exact>
+                          {title}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+
                 </ul>
               </li>
               <li>

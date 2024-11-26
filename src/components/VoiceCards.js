@@ -50,7 +50,7 @@ export default function VoiceCards() {
       setIsLoadingMore(true);
       setCurrentPage((prevPage) => prevPage + 1);
     } else {
-      alert("No more data to load");
+      alert("No more data to load the");
     }
   };
 
